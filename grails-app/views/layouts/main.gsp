@@ -34,6 +34,8 @@
             <asset:stylesheet src="dataTables.bootstrap4.css"/>
             <!-- Sweet Alert -->
             <asset:stylesheet src="sweetalert.css"/>
+            <!-- datePicker -->
+            <asset:stylesheet src="datepicker3.css"/>
 
 
             <!-- Javascript -->
@@ -78,6 +80,8 @@
             <asset:javascript src="sweetalert.min.js"/>
             <asset:javascript src="sweetalert.js"/>
             <asset:javascript src="sweetAlertFunctions.js"/>
+            <!-- datePicker -->
+            <asset:javascript src="bootstrap-datepicker.js"/>
             <g:layoutHead/>
             
 	</head>
@@ -726,6 +730,17 @@
                 console.log('formId' + formId);
                 confirmCancelSwal(formId);
             }
+            $(document).ready(function(){
+              var date_input=$('input[name="date"]'); //our date input has the name "date"
+              var container=$('.content-wrapper form').length>0 ? $('.content-wrapper form').parent() : "body";
+              var options={
+                format: 'mm/dd/yyyy',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+              };
+              date_input.datepicker(options);
+            })
             </script>
         </body>
 </html>
