@@ -31,5 +31,6 @@ class MainController {
     }
     def showDetails(){
         println("details goes here")
+        render(view:'/details/showDetails')
     }
 }

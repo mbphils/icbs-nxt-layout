@@ -36,9 +36,9 @@ function infoSwal(message,urlPage){
 }
 function confirmCancelSwal(formId){
     swal({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        type: 'warning',
+        title: 'Are you sure',
+        text: "You you want to continue?",
+        type: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
@@ -51,16 +51,7 @@ function confirmCancelSwal(formId){
               'success', 
             ).then((result) => {
                 // do something here
-                console.log('Ajax');
-               var URL="${createLink(controller:'main',action:'showDetails')}";
-
-                $.ajax({
-                    url:URL,
-                    data: {id:formId},
-                    success: function(resp){
-                        console.log(resp);
-                    }
-                });
+                $('#idx').submit();
             });
         }else{
             swal(
