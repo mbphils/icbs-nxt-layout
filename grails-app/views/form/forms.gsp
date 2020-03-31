@@ -42,7 +42,7 @@
                       <div class="tab-content" id="custom-content-below-tabContent">
                         <div class="tab-pane fade show active" id="custom-content-below-home" role="tabpanel" aria-labelledby="custom-content-below-home-tab">
                            <legend>Loan Specification</legend>
-                                <form role="form">
+                                <g:form id="idx" url="[action:'showDetails',controller:'main']" method="POST">
                                     <div class="card-body">
                                       <div class="form-group">
                                         <label for="exampleInputEmail1">Email address</label>
@@ -72,6 +72,22 @@
                                         <label for="exampleInputPassword1">Password</label>
                                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                                       </div>
+                                      <div class="form-group"> <!-- Date input -->
+                                        <label class="control-label" for="date">Date</label>
+                                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="exampleInputFile">File input</label>
+                                        <div class="input-group">
+                                          <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="exampleInputFile">
+                                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                          </div>
+                                          <div class="input-group-append">
+                                            <span class="input-group-text" id="">Upload</span>
+                                          </div>
+                                        </div>
+                                      </div>
                                       <div class="form-group">
                                         <label for="exampleInputFile">File input</label>
                                         <div class="input-group">
@@ -91,7 +107,7 @@
                                     </div>
 
                                     <!-- /.card-body -->
-                                  </form>
+                                  </g:form>
                         </div>
                         <div class="tab-pane fade" id="custom-content-below-profile" role="tabpanel" aria-labelledby="custom-content-below-profile-tab">
                            <legend>Financial Details</legend>
@@ -116,7 +132,7 @@
                       <h3 class="card-title">Actions</h3>
                     </div>
                     <div class="card-body table-responsive pad">
-                        <button type="button" class="btn btn-outline-info btn-sm btn-block"  onclick="validateFields();"><i class="fas fa-save"></i> Save</button>
+                        <button type="button" class="btn btn-outline-info btn-sm btn-block"  onclick="validateButton();"><i class="fas fa-save"></i> Save</button>
                         <button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-edit"></i> Update</button>
                         <button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-backward"></i> Back</button>
                     </div>
