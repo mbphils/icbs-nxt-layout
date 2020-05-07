@@ -79,6 +79,7 @@
             <!-- Sweet Alert -->
             <asset:javascript src="sweetalert.min.js"/>
             <asset:javascript src="sweetalert.js"/>
+            <asset:javascript src="sweetalert2.js"/>
             <asset:javascript src="sweetAlertFunctions.js"/>
             <!-- datePicker -->
             <asset:javascript src="bootstrap-datepicker.js"/>
@@ -272,11 +273,17 @@
                         <li class="nav-item">
                           <g:link class="nav-link" controller="main" action="index">Index Page</g:link>
                         </li>
+                        <li class="nav-item">
+                          <g:link class="nav-link" controller="main" action="cashDeposit">Cash Deposit</g:link>
+                        </li>
+                        <li class="nav-item">
+                          <g:link class="nav-link" controller="main" action="checkDeposit">Check Deposit</g:link>
+                        </li>
                       </ul>
                     </li>
                     <li class="nav-item has-treeview">
                       <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="nav-icon fas fa-piggy-bank"></i>
                         <p>
                           Deposits
                           <i class="right fas fa-angle-left"></i>
@@ -285,27 +292,69 @@
                       <ul class="nav nav-treeview">
                         <li class="nav-item">
                           <a href="pages/charts/chartjs.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>ChartJS</p>
+                            <p>Open Deposit Account</p>
                           </a>
                         </li>
                         <li class="nav-item">
                           <a href="pages/charts/flot.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Flot</p>
+                            <p>Deposit Account Amendment</p>
                           </a>
                         </li>
                         <li class="nav-item">
                           <a href="pages/charts/inline.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Inline</p>
+                            <p>Deposit Account Inquiry</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="pages/charts/inline.html" class="nav-link">
+                            <p>Close Deposit Account</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="pages/charts/inline.html" class="nav-link">
+                            <p>Passbook Maintenance</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="pages/charts/inline.html" class="nav-link">
+                            <p>CTD Maintenance</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="pages/charts/inline.html" class="nav-link">
+                            <p>Hold Maintenance</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="pages/charts/inline.html" class="nav-link">
+                            <p>Memo Transaction</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="pages/charts/inline.html" class="nav-link">
+                            <p>Fund Transfer</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="pages/charts/inline.html" class="nav-link">
+                            <p>Deposit Interest Rate Maintenance</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="pages/charts/inline.html" class="nav-link">
+                            <p>Clear Check Manually</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="pages/charts/inline.html" class="nav-link">
+                            <p>Manual FD Rollover</p>
                           </a>
                         </li>
                       </ul>
                     </li>
                     <li class="nav-item has-treeview">
                       <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tree"></i>
+                        <i class="nav-icon fas fa-hand-holding-usd"></i>
                         <p>
                           Loans
                           <i class="fas fa-angle-left right"></i>
@@ -364,7 +413,7 @@
                     </li>
                     <li class="nav-item has-treeview">
                       <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
+                        <i class="nav-icon fas fa-cash-register"></i>
                         <p>
                           Tellering
                           <i class="fas fa-angle-left right"></i>
@@ -399,7 +448,7 @@
                     </li>
                     <li class="nav-item has-treeview">
                       <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
+                        <i class="nav-icon fas fa-book"></i>
                         <p>
                           General Ledger
                           <i class="fas fa-angle-left right"></i>
@@ -429,7 +478,7 @@
                     <li class="nav-header">Administrator</li>
                     <li class="nav-item has-treeview">
                       <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-envelope"></i>
+                        <i class="nav-icon fas fa-tools"></i>
                         <p>
                           System Admin
                           <i class="fas fa-angle-left right"></i>
@@ -458,7 +507,7 @@
                     </li>
                     <li class="nav-item has-treeview">
                       <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-book"></i>
+                        <i class="nav-icon fas fa-cogs"></i>
                         <p>
                           Configuration
                           <i class="fas fa-angle-left right"></i>
@@ -517,7 +566,7 @@
                     </li>
                     <li class="nav-item has-treeview">
                       <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-plus-square"></i>
+                        <i class="nav-icon far fa-file-alt"></i>
                         <p>
                           Audit
                           <i class="fas fa-angle-left right"></i>

@@ -28,7 +28,7 @@
     <body>
         <div class="row">
             <div class="col-sm-9">
-                <div class="card card-primary card-outline">
+                <div class="card card-gray card-outline">
                     <div class="card-header">
                       <h3 class="card-title">DataTable</h3>
                     </div>
@@ -178,7 +178,7 @@
                   </div>
             </div>
             <div class="col-sm-3">
-                <div class="action-bar card card-primary card-outline">
+                <div class="action-bar card card-gray">
                     <div class="card-header">
                       <h3 class="card-title">Actions</h3>
                     </div>

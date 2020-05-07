@@ -34,7 +34,7 @@ function infoSwal(message,urlPage){
         }
       });
 }
-function confirmCancelSwal(formId){
+function confirmCancelSwal(){
     swal({
         title: 'Are you sure',
         text: "You you want to continue?",
@@ -61,4 +61,30 @@ function confirmCancelSwal(formId){
             )
         }
       });
+}
+function forgotPassword(formId){
+    Swal.mixin({
+        input: 'text',
+        confirmButtonText: 'Next &rarr;',
+        showCancelButton: true,
+        progressSteps: ['1', '2']
+    }).queue([
+        {
+          title: 'Username',
+          text: 'Please insert you username'
+        },
+        'Password',
+    ]).then((result) => {
+        if (result.value) {
+          const answers = JSON.stringify(result.value)
+          Swal.fire({
+            title: 'All done!',
+            html: `
+              Your answers:
+              <pre><code>${answers}</code></pre>
+            `,
+            confirmButtonText: 'Lovely!'
+          })
+        }
+    })
 }

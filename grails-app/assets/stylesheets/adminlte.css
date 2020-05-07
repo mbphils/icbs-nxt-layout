@@ -30012,3 +30012,7 @@ a.text-muted:hover {
   color: #ffffff;
 }
 /*# sourceMappingURL=adminlte.css.map */
+
+.nav-item p {
+    font-size: 14px;
+}

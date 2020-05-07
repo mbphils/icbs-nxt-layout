@@ -33,4 +33,13 @@ class MainController {
         println("details goes here")
         render(view:'/details/showDetails')
     }
+    def viewMoreInfo(){
+        render(view:'/details/viewMoreInfo')
+    }
+    def cashDeposit(){
+        render(view:'/tellering/cashDeposit')
+    }
+    def checkDeposit(){
+        render(view:'/tellering/checkDeposit')
+    }
 }

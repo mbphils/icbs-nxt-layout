@@ -9,14 +9,14 @@
 <html>
     <head>
         <meta name="layout" content="main">
-        <title>Details</title>
+        <title>Check Deposit</title>
     </head>
     <body>
         <div class="row">
             <div class="col-sm-9">
                 <div class="card card-gray card-outline">
                     <div class="card-header">
-                      <h3 class="card-title">Loan Application Details</h3>
+                      <h3 class="card-title">Check Deposit Form</h3>
 
                       <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -27,17 +27,19 @@
                     </div>
                     <div class="card-body">
                         <div class="card">
-                            <div class="card-header p-2">
-                              <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Specification</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Financial Details</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Collaterals</a></li>
-                              </ul>
-                            </div><!-- /.card-header -->
+                            
                             <div class="card-body">
                               <div class="tab-content">
                                 <div class="active tab-pane" id="activity">
                                   <!-- Post -->
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <button class="btn btn-primary">Search Account</button>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Username">
+                                    </div>
+                                    <h4>Account Details</h4>
+                                    
                                     <div class="row">
                                        <div class="com-md-3"> 
                                             <div class="card card-gray card-outline">
@@ -87,6 +89,28 @@
                                             </div>
                                        </div>
                                     </div>
+                                    
+                                    <button class="btn btn-block btn-outline-primary"><span class="fa fa-add"></span>Add Check</button>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Passbook Balance</label>
+                                        <input type="number" class="form-control" id="exampleInputEmail1" disabled>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text">Amount</span>
+                                        </div>
+                                        <input type="number" class="form-control" placeholder="amount">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Check Total</label>
+                                        <input type="number" class="form-control" id="exampleInputEmail1" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Reference</label>
+                                        <input type="number" class="form-control" id="exampleInputEmail1" disable="disable">
+                                    </div>
+                                    
+                                    
                                 </div>
                                 <!-- /.tab-pane -->
                                 <div class="tab-pane" id="timeline">

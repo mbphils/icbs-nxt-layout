@@ -14,6 +14,14 @@
         <!-- Theme style -->
         <asset:stylesheet src="adminlte.css"/>
         <asset:stylesheet src="fontawesome-free/css/all.min.css" />
+        <!-- Sweet Alert -->
+        <asset:stylesheet src="sweetalert.css"/>
+        
+        
+        <asset:javascript src="sweetalert.min.js"/>
+        <asset:javascript src="sweetalert.js"/>
+        <asset:javascript src="sweetalert2.js"/>
+        <asset:javascript src="sweetAlertFunctions.js"/>
         <style>
             
             body {
@@ -118,11 +126,21 @@
                         <span>Password</span>
                         </label>
                     </div>
-                </div>       
-	        <div class="form-group">
-	            <button type="submit" class="btn btn-outline-primary login-btn btn-block">Login</button>
+                </div>  
+                <div class="form-group">
+	            <button type="submit" class="btn btn-outline-primary login-btn btn-block"><i class="fas fa-sign-in-alt"></i> Login</button>
+                    <button type="button" class="btn btn-outline-danger login-btn btn-block"  onclick="callForgotPassword();"><i class="fas fa-user-lock"></i> Forgot Password</button>
+
 	        </div>
+            </g:form>
+	        
 	</div>
-        </g:form>
+        <script>
+            function callForgotPassword(){
+             var formId = "Please Select Account Type";
+             console.log('id: ' + formId);
+                forgotPassword();
+            }
+        </script>
     </body>
 </html>
