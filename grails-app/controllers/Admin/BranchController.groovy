@@ -52,7 +52,7 @@ class BranchController {
     }
     
     def editBranchDetails() {
-        println("editCurrentCustomer")
+        println("editCurrentBranch")
         println("params: "+params)
 
         def branchDetails = Branch.get(params.brnchid)
@@ -73,7 +73,7 @@ class BranchController {
     
     def deleteBranchDetails() {
 
-        println("deleteSelectedCustomer")
+        println("deleteSelectedBranch")
         println("params: "+params)
         
         def branchDetails = Branch.get(params.brnchid)
