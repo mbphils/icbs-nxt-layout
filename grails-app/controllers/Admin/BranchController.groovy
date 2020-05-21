@@ -21,7 +21,7 @@ class BranchController {
         println("params: "+params)
         
         def branchDetails = new Branch(code: params.branchcode, name: params.name,
-            address: params.branchaddress, branchManager: params.branchmanager, runDate: params.runDate, branchOpsStartDate: params.bosDate)
+            address: params.branchaddress, branchManager: params.branchmanager, runDate: params.rundate, branchOpsStartDate: params.bosdate)
 
         branchDetails.save(flush:true)
         redirect(action: "showBranch")

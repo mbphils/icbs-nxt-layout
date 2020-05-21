@@ -87,10 +87,10 @@
                                                             <label for="bmanager">Branch Manager : </label> <input class="form-control" placeholder="Branch Manager" type="text" id="bmanager" name="branchmanager" required="true"></input>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="rdate">Run Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="rdate" type="date" name="runDate" class="form-control" value=""/>
+                                                            <label for="rdate">Run Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="rdate" type="date" name="runate" class="form-control" value=""/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="bosdate">Branch Operation Start Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="bosdate" type="date" name="bosDate" class="form-control" value=""/>
+                                                            <label for="bosdate">Branch Operation Start Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="bosdate" type="date" name="bosdate" class="form-control" value=""/>
                                                         </div>
                                                         <br/>
                                                         <br/>
