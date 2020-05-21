@@ -1,9 +1,10 @@
 package Admin
 
-
+import java.text.ParseException;
 import java.util.Date;
 import icbs.admin.Branch;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import grails.gorm.transactions.*
 
 import org.springframework.transaction.annotation.* // *Ace* (got from the net)
@@ -50,32 +51,36 @@ class BranchController {
         [brnch:branchDetails]
     }
     
-    /* def editBranchDetails() {
+    def editBranchDetails() {
         println("editCurrentCustomer")
         println("params: "+params)
-        
-        def password = params.password.encodeAsMD5()
-        def userDetails = UserMaster.findByUserNameAndPassword(params.username, password)
-        if (userDetails) {
-            def customerDetails = Customerr.get(params.custid)
-            SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
-            Date dt = sdformat.parse(params.birthDate);
-            customerDetails.birthDate = dt
-            customerDetails.name = params.customername
-            customerDetails.age = params.customerage.toInteger()
-            customerDetails.address = params.customeraddress
-            customerDetails.emailAddress = params.customeremailadd
-            customerDetails.gender = ListOfValues.get(params.gender.id.toInteger())
-            customerDetails.country = ListOfValues.get(params.country.id.toInteger())
-            customerDetails.maritalStatus = ListOfValues.get(params.maritalStatus.id.toInteger())
-            customerDetails.userupdateddate = new Date()
 
-            customerDetails.save(flush:true)
-            
-        } else{
-            flash.message = "Sorry, Username or Password is invalid."
-            redirect(action: "login", controller: "User2")
-        }
+        def branchDetails = Branch.get(params.brnchid)
+        SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
+        Date dt = sdformat.parse(params.runDate)
+        Date da = sdformat.parse(params.bosDate)
+        branchDetails.runDate = dt
+        branchDetails.branchOpsStartDate = da
+        branchDetails.code = params.branchcode
+        branchDetails.name = params.name
+        branchDetails.address = params.address
+        branchDetails.branchManager = params.branchManager
+
+        branchDetails.save(flush:true)
+        redirect(action: "showBranch")
+
     }
-    */
+    
+    def deleteBranchDetails() {
+
+        println("deleteSelectedCustomer")
+        println("params: "+params)
+        
+        def branchDetails = Branch.get(params.brnchid)
+        
+        branchDetails.delete(flush:true)
+        redirect(action: "showBranch")
+        
+    }
+
 }

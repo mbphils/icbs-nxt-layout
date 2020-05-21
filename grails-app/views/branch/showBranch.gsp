@@ -15,7 +15,7 @@
         <div class="d-flex" id="wrapper">
             <div id="page-content-wrapper">
                 <div>
-                <g:form class="form" role="form" autocomplete="off" id="deletefrm" url="[action:'deleteDetails',controller:'Customer2']" method="POST">
+                <g:form class="form" role="form" autocomplete="off" id="deletefrm" url="[action:'deleteBranchDetails',controller:'Branch']" method="POST">
                     <g:hiddenField id="brnchid" name="brnchid" value="" />
                 </g:form>
                     <div>
@@ -53,7 +53,7 @@
                                     <td><g:formatDate date="${brnch.branchOpsStartDate}" type="date"/></td>
                                     <td>
                                         <g:link class="btn btn-info" action="editBranch" controller="Branch" id="${brnch.id}"><i class="fa fa-edit"></i></g:link>
-                                        <button title="Delete User" style="padding-right: 16px" type="submit" class="btn btn-danger" onclick="myFunctionModalDelete('${brnch.id}');"><i class="fa fa-trash"></i></button>
+                                        <button title="Delete Branch" style="padding-right: 16px" type="submit" class="btn btn-danger" onclick="myFunctionModalDelete('${brnch.id}');"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
                             </g:each>
