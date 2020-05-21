@@ -83,6 +83,8 @@
             <asset:javascript src="sweetAlertFunctions.js"/>
             <!-- datePicker -->
             <asset:javascript src="bootstrap-datepicker.js"/>
+            <!--for create-->
+            <asset:javascript src="forcreate.js"/>
             <g:layoutHead/>
             
 	</head>
@@ -248,6 +250,9 @@
                         </p>
                       </a>
                       <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <g:link class="nav-link" controller="branch" action="showBranch">Branches</g:link>
+                        </li>
                         <li class="nav-item">
                           <g:link class="nav-link" controller="main" action="forms">Forms</g:link>
                         </li>
