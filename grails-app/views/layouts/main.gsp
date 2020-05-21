@@ -86,7 +86,7 @@
             <g:layoutHead/>
             
 	</head>
-	<body class="hold-transition sidebar-mini layout-fixed">
+	<body class="hold-transition sidebar-mini layout-fixed sidebar-collapse">
             <!-- Navbar -->
             <nav class="main-header navbar navbar-expand navbar-white navbar-light">
               <!-- Left navbar links -->
@@ -220,19 +220,6 @@
                   <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
-                    <!-- SEARCH FORM -->
-                    <li class="nav-item has-treeview menu-open">
-                        <form class="form-inline ml-3">
-                          <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                            <div class="input-group-append">
-                              <button class="btn btn-default" type="submit">
-                                <i class="nav-icon fas fa-search"></i>
-                              </button>
-                            </div>
-                          </div>
-                        </form>
-                    </li>
                     <br>
                     <li class="nav-item has-treeview menu-open">
                       <a href="#" class="nav-link active">
@@ -283,6 +270,53 @@
                     </li>
                     <li class="nav-item has-treeview">
                       <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-user-circle"></i>
+                        <p>
+                          Customer
+                          <i class="right fas fa-angle-left"></i>
+                        </p>
+                      </a>
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item has-treeview">
+                            <a href="pages/charts/chartjs.html" class="nav-link">
+                              <p>New Customer
+                                <i class="right fas fa-angle-left"></i>
+                              </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                  <a href="#" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Individual</p>
+                                  </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a href="#" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Partnership</p>
+                                  </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a href="#" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Corporation</p>
+                                  </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a href="#" class="nav-link">
+                                    <i class="far fa-dot-circle nav-icon"></i>
+                                    <p>Cooperative</p>
+                                  </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                          <g:link class="nav-link" controller="customer" action="index"><p>Search Customer</p></g:link>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                      <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-piggy-bank"></i>
                         <p>
                           Deposits
@@ -291,9 +325,7 @@
                       </a>
                       <ul class="nav nav-treeview">
                         <li class="nav-item">
-                          <a href="pages/charts/chartjs.html" class="nav-link">
-                            <p>Open Deposit Account</p>
-                          </a>
+                          <g:link class="nav-link" controller="deposit" action="create"><p>Open Deposit Account</p></g:link>
                         </li>
                         <li class="nav-item">
                           <a href="pages/charts/flot.html" class="nav-link">

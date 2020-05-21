@@ -9,10 +9,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Login</title>
         <asset:stylesheet src="float-labels.css"/>
         <!-- Theme style -->
         <asset:stylesheet src="adminlte.css"/>
+        <asset:stylesheet src="style.css"/>
+        <asset:stylesheet src="animate.css"/>
         <asset:stylesheet src="fontawesome-free/css/all.min.css" />
         <!-- Sweet Alert -->
         <asset:stylesheet src="sweetalert.css"/>
@@ -22,86 +25,69 @@
         <asset:javascript src="sweetalert.js"/>
         <asset:javascript src="sweetalert2.js"/>
         <asset:javascript src="sweetAlertFunctions.js"/>
-        <style>
-            
-            body {
-                display: -ms-flexbox;
-                display: flex;
-                -ms-flex-align: center;
-                align-items: center;
-                padding-top: 40px;
-                padding-bottom: 40px;
-                background-color: #f5f5f5;
-                background-image:url('${resource(dir: "images", file: "bankingbg.jpg")}');
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: cover;
-              }
-              .login-form {
-                              width: 385px;
-                              margin: 30px auto;
-              }
-              .login-form form {        
-                  margin-bottom: 15px;
-                  background: rgb(255, 255, 255, 0.7);
-                  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
-                  padding: 30px;
-              }
-              .login-form h2 {
-                  margin: 0 0 15px;
-                  font-family: Rockwell;
-                  /*font-weight: bold;*/
-                  color: #2980b9;
-              }
-              .form-control, .login-btn {
-                  min-height: 38px;
-                  border-radius: 2px;
-              }
-              .input-group-addon .fa {
-                  font-size: 18px;
-              }
-              .login-btn {
-                  font-size: 15px;
-                  font-weight: bold;
-              }
-              .login-title{
-                  border-bottom: 1px solid #000; 
-              }
-              .btn-outline-primary {
-  color: #007bff;
-  border-color: #007bff;
-}
-
-.btn-outline-primary:hover {
-  color: #ffffff;
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-.btn-outline-primary:focus, .btn-outline-primary.focus {
-  box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5);
-}
-
-.btn-outline-primary.disabled, .btn-outline-primary:disabled {
-  color: #007bff;
-  background-color: transparent;
-}
-
-.btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
-.show > .btn-outline-primary.dropdown-toggle {
-  color: #ffffff;
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-.btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
-.show > .btn-outline-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5);
-}
-        </style>
+        <asset:stylesheet src="css/animate.css"/>
+        
     </head>
     <body>
-        <div class="login-form">
+        <header class="masthead">
+        <div class="container">
+            <div class="row">
+                <div class="col col-xs-12 text-md-left text-center">
+                    <center>
+                        <h1 class="brand-heading animated zoomin">Welcome</h1>
+                        <img class="animated fadeInDown delay-1s" src="${resource(dir: "images", file: "logo.png")}" alt="Bank Logo" class="" width="150px"/>
+                        <h4 class="animated fadeInDown delay-2s">Rural Bank of Sta. Ignacia</h4>
+                    </center>
+                </div>
+                <div class="col ">
+                   <div class="col-md-12">
+                        <div class="card shadow mb-3 bg-white rounded ">
+                            <div class="card-header font-weight-bold" style="color:#33b88d; text-align: center; font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+                                <img class="animated fadeInDown delay-1s" src="${resource(dir: "images", file: "mbphil-logo.png")}" alt="Bank Logo" class="" width="50px"/>
+                                <h4 class="animated faster fadeInDown delay-2s" >EXPRESS - O</h4>
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title"></h5>
+                                <g:form url="[controller:'main', action:'loginFunction']" method="POST" >
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            <label class="form-group has-float-label">
+                                                <input type="text" class="form-control" placeholder="Enter Username" name="username"required="required" autocomplete="off">				
+                                                <span>Username</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                            <label class="form-group has-float-label">
+                                            <input type="password" class="form-control" name="password" placeholder="Enter Password" required="required">				
+                                            <span>Password</span>
+                                            </label>
+                                        </div>
+                                    </div>  
+                                    <div class="form-group">
+                                        <button class="btn btn-outline-success btn-block">Login </button>
+                                    </div>
+                                    <g:hiddenField name="urlredirectInstance" id="urlredirectInstance" value="${urlRedirectInstance}" />
+                                    <div class="form-group">
+                                        <label>Forgot your password?</label>
+                                        <a href="#"  onclick="callForgotPassword();">Click here</a>
+
+                                    </div>
+                                </g:form>
+                            </div>
+                        </div>
+                         <div class="div-footer">
+                            <p class="intro-text animated faster fadeInDown delay-3s" style=" text-align: center; font-family: courier new; font-size: 14px;">Powered by MB Philippines inc. ICBS-NXT version 1.0</p>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </header>
+<!--        <div class="login-form">
             <g:form url="[controller:'main', action:'loginFunction']" method="POST" >
 	    <form action="" method="post">
 	    	<div class="login-title">
@@ -134,13 +120,14 @@
 	        </div>
             </g:form>
 	        
-	</div>
+	</div>-->
         <script>
             function callForgotPassword(){
              var formId = "Please Select Account Type";
              console.log('id: ' + formId);
                 forgotPassword();
             }
+            setInterval('window.location.reload()', 10000);
         </script>
     </body>
 </html>

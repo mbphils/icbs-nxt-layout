@@ -30016,3 +30016,15 @@ a.text-muted:hover {
 .nav-item p {
     font-size: 14px;
 }
+
+.action-bar {
+    position: -webkit-sticky;
+    position: sticky !important;
+    top: 13%;
+}
+.main-header{
+    position: -webkit-sticky;
+    position: sticky !important;
+    top: 0;
+}
+
