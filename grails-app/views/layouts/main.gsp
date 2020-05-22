@@ -85,6 +85,10 @@
             <asset:javascript src="bootstrap-datepicker.js"/>
             <!--for create-->
             <asset:javascript src="forcreate.js"/>
+            <!--for edit-->
+            <asset:javascript src="foredit.js"/>
+            <!--for delete-->
+            <asset:javascript src="fordelete.js"/>
             <g:layoutHead/>
             
 	</head>

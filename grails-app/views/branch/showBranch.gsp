@@ -15,8 +15,8 @@
         <div class="d-flex" id="wrapper">
             <div id="page-content-wrapper">
                 <div>
-                <g:form class="form" role="form" autocomplete="off" id="deletefrm" url="[action:'deleteDetails',controller:'Customer2']" method="POST">
-                    <g:hiddenField id="custid" name="custid" value="" />
+                <g:form class="form" role="form" autocomplete="off" id="deletefrm" url="[action:'deleteBranchDetails',controller:'Branch']" method="POST">
+                    <g:hiddenField id="brnchid" name="brnchid" value="" />
                 </g:form>
                     <div>
                         <div id="login">
@@ -32,27 +32,28 @@
                         <table id="myTable" class="table table-hover table-bordered table-responsive">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>Code #</th>
-                                    <th>Full Name</th>
-                                    <th>Address</th>
+                                    <th>Branch I.D #</th>
+                                    <th>Branch Code #</th>
+                                    <th>Branch Name</th>
+                                    <th>Branch Address</th>
                                     <th>Branch Manager</th>
-                                    <th>Run Date</th>
+                                    <th>Branch Run Date</th>
                                     <th>Branch Operation Start Date</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead> 
-                            <g:each in="${customerlist}" var="cust">
+                            <g:each in="${branchlist}" var="brnch">
                                 <tr>
-                                    <td>${cust.id}</td>
-                                    <td>${cust.name}</td>
-                                    <td>${cust.age}</td>
-                                    <td>${cust.address}</td>
-                                    <td>${cust.emailAddress}</td>
-                                    <td><g:formatDate date="${cust.usercreateddate}" type="datetime"/></td>
-                                    <td><g:formatDate date="${cust.userupdateddate}" type="datetime"/></td>
+                                    <td>${brnch.id}</td>
+                                    <td>${brnch.code}</td>
+                                    <td>${brnch.name}</td>
+                                    <td>${brnch.address}</td>
+                                    <td>${brnch.branchManager}</td>
+                                    <td><g:formatDate date="${brnch.runDate}" type="date"/></td>
+                                    <td><g:formatDate date="${brnch.branchOpsStartDate}" type="date"/></td>
                                     <td>
-                                        <g:link class="btn btn-info" action="editCustomer" controller="Customer2" id="${cust.id}"><i class="fa fa-edit"></i></g:link>
-                                        <button title="Delete User" style="padding-right: 16px" type="submit" class="btn btn-danger" onclick="myFunctionModalDelete('${cust.id}');"><i class="fa fa-trash-o"></i></button>
+                                        <g:link class="btn btn-info" action="editBranch" controller="Branch" id="${brnch.id}"><i class="fa fa-edit"></i></g:link>
+                                        <button title="Delete Branch" style="padding-right: 16px" type="submit" class="btn btn-danger" onclick="myFunctionModalDelete('${brnch.id}');"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
                             </g:each>
@@ -75,25 +76,23 @@
                                                             Complete the form below to create a new branch!
                                                         </p>
                                                         <div class="form-group">
-                                                            <label for="bcode">Code :</label> <input type="text" id="bcode" name="branchcode" required="true" class="form-control" placeholder="Branch Code"></input>
+                                                            <label for="bcode">Branch Code :</label> <input type="text" id="bcode" name="branchCode" required="true" class="form-control" placeholder="Branch Code"></input>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="fname">Name : </label> <input class="form-control" type="text" id="fname" placeholder="Full Name" name="name" value="" required="true"></input>
+                                                            <label for="bname">Branch Name : </label> <input class="form-control" type="text" id="bname" placeholder="Branch Name" name="name" value="" required="true"></input>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="badd">Address : </label> <input class="form-control" placeholder="Branch Address" type="text" id="badd" name="branchaddress" required="=true"></input>
+                                                            <label for="badd">Branch Address : </label> <input class="form-control" placeholder="Branch Address" type="text" id="badd" name="branchAddress" required="=true"></input>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="bmanager">Branch Manager : </label> <input class="form-control" placeholder="Branch Manager" type="text" id="bmanager" name="branchmanager" required="true"></input>
+                                                            <label for="bmanager">Branch Manager : </label> <input class="form-control" placeholder="Branch Manager" type="text" id="bmanager" name="branchManager" required="true"></input>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="rdate">Run Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="rdate" type="date" name="runate" class="form-control" value=""/>
+                                                            <label for="rdate"> Branch Run Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="rdate" type="date" name="runDate" class="form-control" value=""/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="bosdate">Branch Operation Start Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="bosdate" type="date" name="bosdate" class="form-control" value=""/>
+                                                            <label for="bosdate">Branch Operation Start Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="bosdate" type="date" name="bosDate" class="form-control" value=""/>
                                                         </div>
-                                                        <br/>
-                                                        <br/>
                                                     </div>
                                                 </div>
                                             </g:uploadForm>
