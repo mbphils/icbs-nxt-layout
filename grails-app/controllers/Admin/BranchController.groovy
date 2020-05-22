@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.* // *Ace* (got from the net)
 
 class BranchController {
     
-    def showBranch() {   
+    def index(){
         def b = Branch.createCriteria()
         def branch = b.list {
             order("id", "asc")
@@ -20,6 +20,17 @@ class BranchController {
         
         [branchlist:branch]
     }
+    def create(){
+        respond new Branch(params)
+    }
+//    def showBranch() {   
+//        def b = Branch.createCriteria()
+//        def branch = b.list {
+//            order("id", "asc")
+//        }
+//        
+//        [branchlist:branch]
+//    }
     
     def saveBranchDetails() {
         println("saveNewBranch")
@@ -37,24 +48,14 @@ class BranchController {
         branchDetails.branchManager = params.branchManager
 
         branchDetails.save(flush:true)
-        redirect(action: "showBranch")
+        redirect(action: "index")
     }
     
-    def displayBranch(){
-        
-        def b = Branch.createCriteria()
-        def branch = b.list {
-            order("id", "asc")
-        }
-        
-        [branchlist:branch]
-    }
-    
-    def editBranch() {
+    def edit() {
         
         println("params : "+params)
         
-        def branchDetails = Branch.get(params.id)
+        def branchDetails = Branch.get(params.brnchEdit)
         [brnch:branchDetails]
     }
     
@@ -64,29 +65,39 @@ class BranchController {
 
         def branchDetails = Branch.get(params.brnchid)
         SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
-        Date dt = sdformat.parse(params.runDate)
+        /*Date dt = sdformat.parse(params.runDate)
         Date da = sdformat.parse(params.bosDate)
         branchDetails.runDate = dt
-        branchDetails.branchOpsStartDate = da
+        branchDetails.branchOpsStartDate = da*/
         branchDetails.code = params.branchcode
         branchDetails.name = params.name
         branchDetails.address = params.address
         branchDetails.branchManager = params.branchManager
 
         branchDetails.save(flush:true)
-        redirect(action: "showBranch")
+        redirect(action: "show", id: branchDetails.id, params: [id: branchDetails.id])
 
     }
-    
+    def show(Branch branchDetails){
+        println params
+        def brnchInstance
+        if(params.id){
+           brnchInstance = Branch.get(params.id.toInteger())
+        }else{
+           brnchInstance = Branch.get(params.brnchShow)
+        }
+        
+        [brnchInstance:brnchInstance]
+    }
     def deleteBranchDetails() {
 
         println("deleteSelectedBranch")
         println("params: "+params)
         
-        def branchDetails = Branch.get(params.brnchid)
+        def branchDetails = Branch.get(params.brnchDel)
         
         branchDetails.delete(flush:true)
-        redirect(action: "showBranch")
+        redirect(action: "index")
         
     }
 

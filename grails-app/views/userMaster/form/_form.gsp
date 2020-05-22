@@ -1,5 +1,5 @@
 <fieldset>
-<div class="row  form-group ${hasErrors(bean: userMasterInstance, field: 'name1', 'has-error')} required">
+<div class="row form-group ${hasErrors(bean: userMasterInstance, field: 'name1', 'has-error')} required">
 	<label class="control-label col-sm-3" for="name1">
 		<g:message code="userMaster.name1.label" default="First Name" />
 		<span class="required-indicator">*</span>
@@ -19,7 +19,7 @@
 </div>
 
 
-<div class="row  form-group ${hasErrors(bean: userMasterInstance, field: 'name2', 'has-error')} ">
+<div class="row form-group ${hasErrors(bean: userMasterInstance, field: 'name2', 'has-error')} ">
 	<label class="control-label col-sm-3" for="name2">
 		<g:message code="userMaster.name2.label" default="Middle Name" />
 	</label>
