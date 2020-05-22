@@ -83,12 +83,10 @@
             <asset:javascript src="sweetAlertFunctions.js"/>
             <!-- datePicker -->
             <asset:javascript src="bootstrap-datepicker.js"/>
-            <!--for create-->
-            <asset:javascript src="forcreate.js"/>
-            <!--for edit-->
-            <asset:javascript src="foredit.js"/>
-            <!--for delete-->
-            <asset:javascript src="fordelete.js"/>
+            <!-- Popper JS -->
+            <asset:javascript src="popper.min.js"/>
+            <!-- Branch JS -->
+            <asset:javascript src="branch.js"/>
             <g:layoutHead/>
             
 	</head>
@@ -804,6 +802,9 @@
               <!-- /.content-header -->
         
            <script>
+            $(function () {
+                 $('[data-toggle="tooltip"]').tooltip()
+             })
             function validateFields(){
                 var formId = "Please Select Account Type";
                 confirmCancelSwal(formId);
