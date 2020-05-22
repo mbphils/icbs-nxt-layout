@@ -528,12 +528,6 @@
                           <g:link class="nav-link" controller="branch" action="index">Branch Maintenance</g:link>
                         </li>
                         <li class="nav-item">
-                          <a href="pages/mailbox/compose.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Compose</p>
-                          </a>
-                        </li>
-                        <li class="nav-item">
                             <g:link class="nav-link" controller="userMaster" action="index">User Management</g:link>
                         </li>
                       </ul>
