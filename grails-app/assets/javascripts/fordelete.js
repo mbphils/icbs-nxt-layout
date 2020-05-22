@@ -9,3 +9,8 @@ function myFunctionModalDelete(x) {
     $("#myModalDelete").modal();
     
 }
+
+function userDelete(x) {
+    $("#usid").val(x);
+    $("#myModalDeletes").modal();
+}

@@ -29,6 +29,9 @@
         <div class="row">
             <div class="col-sm-9">
                 <div class="card card-gray card-outline">
+                    <g:form class="form" role="form" autocomplete="off" id="deletefrm" url="[action:'deleteUserDetails',controller:'UserMaster']" method="POST">
+                        <g:hiddenField id="usid" name="usid" value="" />
+                    </g:form>
                     <div class="card-header">
                       <h3 class="card-title">User Maintenance</h3>
                     </div>
@@ -45,26 +48,20 @@
                         </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Individual</td>
-                                <td>Reymart Montana</td>
-                                <td>Muntinlupa Branch</td>
-                                <td><small class="badge badge-success"><i class="fas fa-check"></i> Active</small></td>
-                              <g:form id="idx" url="[action:'create',controller:'userMaster']" method="POST">
-
-                              </g:form>
-                              <td><button class="btn btn-outline-success btn-sm" onclick="validateButton();"> <span class="fas fa-eye"></span> View Details</button></td>
-                            </tr>
-                            <tr>
-                                <td>Individual</td>
-                                <td>Juan Dela Cruz</td>
-                                <td>Makati Branch</td>
-                                <td><small class="badge badge-warning"><i class="fas fa-close"></i> Pending</small></td>
-                              <g:form id="idx" url="[action:'customerInquiry',controller:'customer']" method="POST">
-
-                              </g:form>
-                              <td><button class="btn btn-outline-success btn-sm" onclick="validateButton();"> <span class="fas fa-eye"></span> View Details</button></td>
-                            </tr>
+                            <g:each in="${userlist}" var="us">
+                                <tr>
+                                    <td style="display:none;">${us.id}</td>
+                                    <td></td>
+                                    <td>${us.firstName} ${us.lastName}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <g:link class="btn btn-info" action="edit" controller="UserMaster" id="${us.id}"><i class="fa fa-edit"></i></g:link>
+                                        <button title="Delete User" style="padding-right: 16px" type="submit" class="btn btn-danger" onclick="userDelete('${us.id}');"><i class="fa fa-trash"></i></button>
+                                        <button class="btn btn-outline-success btn-sm" onclick="validateButton();"> <span class="fas fa-eye"></span> View Details</button>
+                                    </td>
+                                </tr>
+                            </g:each>
                         </tbody>
                         <tfoot>
                         <tr>
@@ -77,7 +74,25 @@
                         </tfoot>
                       </table>
                     </div>
-                    <!-- /.card-body -->
+                    <div class="container">
+                            <div class="modal fade" id="myModalDeletes">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Delete User?</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete this user? This action cannot be undone.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button style="float:right" class="btn btn-danger" onclick="myFunctionDelete();">Confirm</button>
+                                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
                   </div>
             </div>
             <div class="col-sm-3">
@@ -91,6 +106,8 @@
                 </div>
             </div>
         </div>
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     </body>
     
 </html>

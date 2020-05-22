@@ -74,7 +74,6 @@
                                     <div class="form-group">
                                         <label>Forgot your password?</label>
                                         <a href="#"  onclick="callForgotPassword();">Click here</a>
-
                                     </div>
                                 </g:form>
                             </div>

@@ -253,9 +253,6 @@
                       </a>
                       <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <g:link class="nav-link" controller="branch" action="showBranch">Branches</g:link>
-                        </li>
-                        <li class="nav-item">
                           <g:link class="nav-link" controller="main" action="forms">Forms</g:link>
                         </li>
                         <li class="nav-item">

@@ -32,13 +32,45 @@
                                 <a class="nav-link" id="custom-content-below-profile-tab" data-toggle="pill" href="#custom-content-below-profile" role="tab" aria-controls="custom-content-below-profile" aria-selected="false">User Role</a>
                             </li>
                         </ul>
-                        <g:form id="idx" url="[action:'showDetails',controller:'main']" method="POST">
+                        <g:form class="form" role="form" autocomplete="off" id="createfrm" name="createfrm" url="[action:'saveUserDetails',controller:'UserMaster']" method="POST">
                             <div class="tab-content" id="custom-content-below-tabContent">
                                 <div class="tab-pane fade show active" id="custom-content-below-home" role="tabpanel" aria-labelledby="custom-content-below-home-tab">
                                     <legend>Add User Details</legend>
-                                    <g:render template="form/form"/>
-                                    <!-- /.card-body -->
-
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <div> <div class="card card-outline-secondary">
+                                                            <div class="card-body">
+                                                                <p class="info">
+                                                                    Complete the form below to create a new user!
+                                                                </p>
+                                                                <div class="form-group">
+                                                                    <label for="uname">User Name : </label> <input class="form-control" type="text" id="uname" placeholder="User Name" name="userName" required="true"></input>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="pword">Password : </label> <input class="form-control" type="password" id="pword" placeholder="Password" name="password" required="true"></input>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="fname">First Name : </label> <input class="form-control" type="text" id="fname" placeholder="First Name" name="firstName" required="true"></input>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="lname">Last Name : </label> <input class="form-control" type="text" id="lname" placeholder="Last Name" name="lastName" required="true"></input>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="birthday">Birth Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="birthday" type="date" name="birthDate" class="form-control"/>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="uaedate">User Access Expiry Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="uaedate" type="date" name="userAccessExpiryDate" class="form-control"/>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="upedate">User Password Expiry Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="upedate" type="date" name="userPasswordExpiryDate" class="form-control"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="custom-content-below-profile" role="tabpanel" aria-labelledby="custom-content-below-profile-tab">
                                     <legend>Add User Role</legend>
@@ -57,7 +89,7 @@
                         <h3 class="card-title">Actions</h3>
                     </div>
                     <div class="card-body table-responsive pad">
-                        <button type="button" class="btn btn-outline-info btn-sm btn-block"  onclick="validateButton();"><i class="fas fa-save"></i> Save</button>
+                        <button type="button" class="btn btn-outline-info btn-sm btn-block"  onclick="userCreate();"><i class="fas fa-save"></i> Save</button>
                         <button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-edit"></i> Update</button>
                         <button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-backward"></i> Back</button>
                     </div>
