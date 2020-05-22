@@ -14,7 +14,6 @@ class Branch {
         name nullable:true
         address nullable:true
         branchManager nullable:true
-    
         runDate nullable:true
         branchOpsStartDate nullable:true    
     }

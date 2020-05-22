@@ -76,25 +76,23 @@
                                                             Complete the form below to create a new branch!
                                                         </p>
                                                         <div class="form-group">
-                                                            <label for="bcode">Branch Code :</label> <input type="text" id="bcode" name="branchcode" required="true" class="form-control" placeholder="Branch Code"></input>
+                                                            <label for="bcode">Branch Code :</label> <input type="text" id="bcode" name="branchCode" required="true" class="form-control" placeholder="Branch Code"></input>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="bname">Branch Name : </label> <input class="form-control" type="text" id="bname" placeholder="Branch Name" name="name" value="" required="true"></input>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="badd">Branch Address : </label> <input class="form-control" placeholder="Branch Address" type="text" id="badd" name="branchaddress" required="=true"></input>
+                                                            <label for="badd">Branch Address : </label> <input class="form-control" placeholder="Branch Address" type="text" id="badd" name="branchAddress" required="=true"></input>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="bmanager">Branch Manager : </label> <input class="form-control" placeholder="Branch Manager" type="text" id="bmanager" name="branchmanager" required="true"></input>
+                                                            <label for="bmanager">Branch Manager : </label> <input class="form-control" placeholder="Branch Manager" type="text" id="bmanager" name="branchManager" required="true"></input>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="rdate"> Branch Run Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="rdate" type="date" name="rundate" class="form-control" value=""/>
+                                                            <label for="rdate"> Branch Run Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="rdate" type="date" name="runDate" class="form-control" value=""/>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="bosdate">Branch Operation Start Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="bosdate" type="date" name="bosdate" class="form-control" value=""/>
+                                                            <label for="bosdate">Branch Operation Start Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="bosdate" type="date" name="bosDate" class="form-control" value=""/>
                                                         </div>
-                                                        <br/>
-                                                        <br/>
                                                     </div>
                                                 </div>
                                             </g:uploadForm>
