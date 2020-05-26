@@ -65,6 +65,14 @@
                                                                 <div class="form-group">
                                                                     <label for="upedate">User Password Expiry Date :</label> <input data-date-format="DD MMMM YYYY" required="true" id="upedate" type="date" name="userPasswordExpiryDate" class="form-control"/>
                                                                 </div>
+                                                                <div class="form-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <label style="width:max-content" class="input-group-text" for="branchname">Branch :</label> 
+                                                                        <g:select class="input-group-text" id="address" name="address.id" 
+                                                                        from="${icbs.admin.Branch.findAllByCode('001')}" optionKey="id" 
+                                                                        optionValue="address" required="" id="branchname" value="" class="many-to-one form-control"/>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                 </div>

@@ -53,7 +53,7 @@
                                     <td style="display:none;">${us.id}</td>
                                     <td></td>
                                     <td>${us.firstName} ${us.lastName}</td>
-                                    <td></td>
+                                    <td>${us.branch?.address}</td>
                                     <td></td>
                                     <td>
                                         <g:link class="btn btn-info" action="edit" controller="UserMaster" id="${us.id}"><i class="fa fa-edit"></i></g:link>

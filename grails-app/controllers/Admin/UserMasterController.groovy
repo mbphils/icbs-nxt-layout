@@ -42,6 +42,7 @@ class UserMasterController {
         userDetails.firstName = params.firstName
         userDetails.password = params.password.encodeAsMD5()
         userDetails.createdDate = new Date()
+        userDetails.branch = Branch.get(params.address.id.toInteger())
 
         userDetails.save(flush:true)
         redirect(action: "index")
