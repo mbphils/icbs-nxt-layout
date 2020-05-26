@@ -17,13 +17,6 @@
                 <div class="card card-gray card-outline">
                     <div class="card-header">
                       <h3 class="card-title">User Details</h3>
-
-                      <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                          <i class="fas fa-minus"></i></button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                          <i class="fas fa-times"></i></button>
-                      </div>
                     </div>
                     <div class="card-body">
                         <table class="table table-hover table-responsive-sm">
@@ -57,6 +50,13 @@
                     </div>
                     <div class="card-body table-responsive pad">
                         <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> User Index</g:link>
+                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> View More Information</g:link>
+                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> Update Record</g:link>
+                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> Update User Status</g:link>
+                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> Reset Password</g:link>
+                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> Reset Access Expiry Date</g:link>
+                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> Assign Cash/COCI Pointer</g:link>
+                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> Force Logout</g:link>
                     </div>
                 </div>
             </div>

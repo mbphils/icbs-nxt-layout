@@ -40,7 +40,7 @@
                       <table id="example1" class="table table-bordered table-striped table-responsive-md">
                         <thead>
                         <tr>
-                            <th>User ID</th>
+                            <th>User Name</th>
                             <th>Display Name</th>
                             <th>Branch</th>
                             <th>Actions</th>
@@ -49,23 +49,11 @@
                         <tbody>
                             <g:each in="${userlist}" var="us">
                                 <tr>
-                                    <td>${us.id}</td>
+                                    <td>${us.userName}</td>
                                     <td>${us.firstName} ${us.lastName}</td>
                                     <td>${us.branch?.address}</td>
                                     <td width="16%">
                                     <div class="row ">
-                                        <div class="col-xs-4">
-                                            <g:form id="userEditIdx" url="[action:'edit',controller:'userMaster']" method="POST">
-                                                <g:hiddenField name="userEdit" value="${us.id}" />
-                                            </g:form>
-                                            <button class="btn btn-info" title="Edit User" data-toggle="tooltip" data-placement="bottom" type='button' onclick="editUserWarning();"><i class="fa fa-edit"></i></button>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <g:form id="userDeleteIdx" url="[action:'deleteUserDetails',controller:'userMaster']" method="POST">
-                                                <g:hiddenField name="userDel" value="${us.id}" />
-                                            </g:form>
-                                            <button title="Delete User" data-toggle="tooltip" data-placement="bottom" type="submit" class=" btn btn-danger" onclick="deleteUserWarning();"><i class="fa fa-trash"></i></button>
-                                        </div>
                                         <div class="col-xs-4">
                                             <g:link title="Show User" data-toggle="tooltip" data-placement="bottom" action="show" class=" btn btn-success" 
                                             id="${us.id}"><i class="fa fa-eye"></i></g:link>
@@ -77,12 +65,6 @@
                             </g:each>
                         </tbody>
                         <tfoot>
-                        <tr>
-                            <th>User ID</th>
-                            <th>Display Name</th>
-                            <th>Branch</th>
-                            <th>Actions</th>
-                        </tr>
                         </tfoot>
                       </table>
                     </div>
