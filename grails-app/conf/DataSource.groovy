@@ -2,8 +2,10 @@ dataSource {
     pooled = true
     jmxExport = true
     driverClassName = "org.postgresql.Driver"
-    username = "postgres"
-    password = "postgres" //LOCAL
+    //username = "postgres"
+    //password = "postgres" //LOCAL
+    username = "postgres"       // imac
+    password = "e8a48653851e28c69d0506508fb27fc5"       // imac  
 }
 
 hibernate {
