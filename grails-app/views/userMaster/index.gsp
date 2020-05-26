@@ -40,35 +40,47 @@
                       <table id="example1" class="table table-bordered table-striped table-responsive-md">
                         <thead>
                         <tr>
-                            <th>Customer Type</th>
+                            <th>User ID</th>
                             <th>Display Name</th>
                             <th>Branch</th>
-                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
                             <g:each in="${userlist}" var="us">
                                 <tr>
-                                    <td style="display:none;">${us.id}</td>
-                                    <td></td>
+                                    <td>${us.id}</td>
                                     <td>${us.firstName} ${us.lastName}</td>
                                     <td>${us.branch?.address}</td>
-                                    <td></td>
-                                    <td>
-                                        <g:link class="btn btn-info" action="edit" controller="UserMaster" id="${us.id}"><i class="fa fa-edit"></i></g:link>
-                                        <button title="Delete User" style="padding-right: 16px" type="submit" class="btn btn-danger" onclick="userDelete('${us.id}');"><i class="fa fa-trash"></i></button>
-                                        <button class="btn btn-outline-success btn-sm" onclick="validateButton();"> <span class="fas fa-eye"></span> View Details</button>
-                                    </td>
+                                    <td width="16%">
+                                    <div class="row ">
+                                        <div class="col-xs-4">
+                                            <g:form id="userEditIdx" url="[action:'edit',controller:'userMaster']" method="POST">
+                                                <g:hiddenField name="userEdit" value="${us.id}" />
+                                            </g:form>
+                                            <button class="btn btn-info" title="Edit User" data-toggle="tooltip" data-placement="bottom" type='button' onclick="editUserWarning();"><i class="fa fa-edit"></i></button>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <g:form id="userDeleteIdx" url="[action:'deleteUserDetails',controller:'userMaster']" method="POST">
+                                                <g:hiddenField name="userDel" value="${us.id}" />
+                                            </g:form>
+                                            <button title="Delete User" data-toggle="tooltip" data-placement="bottom" type="submit" class=" btn btn-danger" onclick="deleteUserWarning();"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <g:link title="Show User" data-toggle="tooltip" data-placement="bottom" action="show" class=" btn btn-success" 
+                                            id="${us.id}"><i class="fa fa-eye"></i></g:link>
+                                            
+                                        </div>
+                                    </div>
+                                </td>
                                 </tr>
                             </g:each>
                         </tbody>
                         <tfoot>
                         <tr>
-                            <th>Customer Type</th>
+                            <th>User ID</th>
                             <th>Display Name</th>
                             <th>Branch</th>
-                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                         </tfoot>
@@ -101,13 +113,12 @@
                       <h3 class="card-title">Actions</h3>
                     </div>
                     <div class="card-body table-responsive pad">
-                        <button type="button" class="swalSample btn btn-outline-info btn-sm btn-block"  onclick="validateFields();"><i class="fas fa-save"></i> Create New User</button>
+                         <g:form id="createUserIdx" url="[action:'create',controller:'userMaster']" ></g:form>
+                        <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="createUserWarning();"><i class="fas fa-save"></i> Create New User</button>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     </body>
     
 </html>

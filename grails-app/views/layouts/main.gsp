@@ -87,7 +87,7 @@
             <asset:javascript src="popper.min.js"/>
             <!-- Branch JS -->
             <asset:javascript src="branch.js"/>
-            <asset:javascript src="forcreate.js"/>
+            <asset:javascript src="userMaster.js"/>
             <g:layoutHead/>
             
 	</head>

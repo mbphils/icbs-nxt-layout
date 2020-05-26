@@ -50,7 +50,7 @@ class UserMasterController {
     }
     
     def edit() {
-        def userDetails = UserMaster.get(params.id)
+        def userDetails = UserMaster.get(params.userEdit)
         [us:userDetails]
     }
     
@@ -74,14 +74,21 @@ class UserMasterController {
         userDetails.save(flush:true)
         redirect(action: "index")
     }
+    def show(UserMaster userDetails){
+        println params
+        def userInstance = UserMaster.get(params.id)
+        
+        [userInstance:userInstance]
+    }
     
     def deleteUserDetails() {
         println("deleteSelectedBranch")
         println("params: "+params)
         
-        def userDetails = UserMaster.get(params.usid)
+        def userDetails = UserMaster.get(params.userDel)
         
         userDetails.delete(flush:true)
+        redirect(action: "index")
     }
     
 }

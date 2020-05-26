@@ -70,10 +70,8 @@
                                             <button title="Delete Branch" data-toggle="tooltip" data-placement="bottom" type="submit" class=" btn btn-danger" onclick="deleteWarning();"><i class="fa fa-trash"></i></button>
                                         </div>
                                         <div class="col-xs-4">
-                                            <g:form id="branchShowIdx" url="[action:'show',controller:'branch']" method="POST">
-                                                <g:hiddenField name="brnchShow" value="${brnch.id}" />
-                                            </g:form>
-                                            <button title="Show Branch" data-toggle="tooltip" data-placement="bottom" type="button" class=" btn btn-success" onclick="showWarning();"><i class="fa fa-eye"></i></button>
+                                            <g:link title="Show Branch" data-toggle="tooltip" data-placement="bottom" action="show" class=" btn btn-success" 
+                                            id="${brnch.id}"><i class="fa fa-eye"></i></g:link>
                                         </div>
                                     </div>
                                 </td>
