@@ -68,13 +68,7 @@ class BranchController {
     }
     def show(Branch branchDetails){
         println params
-        def brnchInstance
-        if(params.id){
-           brnchInstance = Branch.get(params.id.toInteger())
-        }else{
-           brnchInstance = Branch.get(params.brnchShow)
-        }
-        
+        def brnchInstance = Branch.get(params.id)
         [brnchInstance:brnchInstance]
     }
     def deleteBranchDetails() {
