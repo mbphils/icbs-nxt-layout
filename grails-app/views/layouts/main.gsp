@@ -189,7 +189,7 @@
                     </a>
                     <div class="dropdown-divider"></div>
 <!--                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>-->
-                      <g:link class="dropdown-item dropdown-footer" controller="authentication" action="logout">Logout</g:link>
+                      
                   </div>
                 </li>
 <!--                <li class="nav-item">
@@ -205,20 +205,35 @@
               <a href="index3.html" class="brand-link">
                 <img src="${resource(dir: "images", file: "mbphil-logo.jpg")}" alt="Bank Logo" class="brand-image img-circle elevation-3"
                      style="opacity: .8"/>
-                <span class="brand-text font-weight-light">Express - O</span>
+                <span class="brand-text font-weight-bold">Express - O</span>
               </a>
 
               <!-- Sidebar -->
               <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                  <div class="image">
-                  <img src="${resource(dir: "images", file: "avatar5.png")}" alt="Bank Logo" alt="User Avatar" class="img-size-50 img-circle mr-3"/>
-                  </div>
-                  <div class="info">
-                    <a href="#" class="d-block">System User</a>
-                  </div>
-                </div>
+<!--                    <div class="image">
+                      <img src="${resource(dir: "images", file: "avatar5.png")}" alt="Bank Logo" alt="User Avatar" class="img-size-50 img-circle mr-3"/>
+                    </div>
+                    <div class="info">
+
+                      <a href="#" class="d-block">System User</a>
+                    </div>-->
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    System User
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                <g:link class="nav-link" controller="authentication" action="logout"> <i class="fas fa-sign-out-alt nav-icon"></i> <p>Logout</p></g:link>
+                              </li>
+                            </ul>
+                        </li>
+                    </ul>
                     
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">

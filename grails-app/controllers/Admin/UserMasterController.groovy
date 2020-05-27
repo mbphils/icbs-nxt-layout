@@ -90,5 +90,10 @@ class UserMasterController {
         userDetails.delete(flush:true)
         redirect(action: "index")
     }
-    
+    def viewMoreInfo(){
+        println(params)
+        def userInstance = UserMaster.get(params.id)
+        
+        [userInstance:userInstance]
+    }
 }

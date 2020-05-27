@@ -33,7 +33,7 @@
                         <g:hiddenField id="usid" name="usid" value="" />
                     </g:form>
                     <div class="card-header">
-                      <h3 class="card-title">User Maintenance</h3>
+                      <h3 class="card-title"><i class="fas fa-table"></i> User Maintenance</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -52,15 +52,15 @@
                                     <td>${us.userName}</td>
                                     <td>${us.firstName} ${us.lastName}</td>
                                     <td>${us.branch?.address}</td>
-                                    <td width="16%">
-                                    <div class="row ">
-                                        <div class="col-xs-4">
-                                            <g:link title="Show User" data-toggle="tooltip" data-placement="bottom" action="show" class=" btn btn-success" 
-                                            id="${us.id}"><i class="fa fa-eye"></i></g:link>
-                                            
+                                    <td width="5%">
+                                        <div class="row ">
+                                            <div class="col-xs-4" style="margin: 0 auto;">
+                                                <g:link title="Show User" data-toggle="tooltip" data-placement="bottom" action="show" class=" btn btn-success" 
+                                                id="${us.id}"><i class="fa fa-eye"></i></g:link>
+
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
+                                    </td>
                                 </tr>
                             </g:each>
                         </tbody>
