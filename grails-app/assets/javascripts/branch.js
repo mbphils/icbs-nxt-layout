@@ -59,7 +59,7 @@ function branchValidation(){
 function editWarning(){
     swal({
         title: 'Are you sure',
-        text: "You you want to continue?",
+        text: "You you want to edit this branch?",
         type: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -107,7 +107,7 @@ function deleteWarning(){
 function createWarning(){
     swal({
         title: 'Are you sure',
-        text: "You you want to delete this data?",
+        text: "You you want to create a new branch?",
         type: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

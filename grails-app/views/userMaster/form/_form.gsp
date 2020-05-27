@@ -48,7 +48,7 @@
         <div class="row form-group">
                 <label class="col-sm-3" for="branchname">Branch :</label> 
                 <div class="col-sm-9">
-                    <g:select id="address" name="address.id" from="${icbs.admin.Branch.findAllByCode('001')}" optionKey="id" 
+                    <g:select id="address" name="address.id" from="${icbs.admin.Branch.findAllByVersion('0')}" optionKey="id" 
                         optionValue="address" required="" id="branchname" value="" class="many-to-one form-control"/>
                 </div>
         </div>
