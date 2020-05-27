@@ -64,6 +64,14 @@
                       <h3 class="card-title">Actions</h3>
                     </div>
                     <div class="card-body table-responsive pad">
+                        <g:form id="branchEditIdx" url="[action:'edit',controller:'branch']" method="GET">
+                            <g:hiddenField name="brnchEdit" value="${brnchInstance.id}" />
+                        </g:form>
+                        <g:form id="branchDeleteIdx" url="[action:'deleteBranchDetails',controller:'branch']" method="GET">
+                            <g:hiddenField name="brnchDel" value="${brnchInstance.id}" />
+                        </g:form>
+                        <button class="btn btn-outline-success btn-sm btn-block" type='button' onclick="editWarning();"><i class="fa fa-edit"></i> Update Record</button>
+                        <button class="btn btn-outline-danger btn-sm btn-block" type="submit" onclick="deleteWarning();"><i class="fa fa-trash"></i> Delete Record</button>
                         <g:link class="btn btn-outline-success btn-sm btn-block" controller="branch" action="index"><i class="fas fa-backward"></i> Branch Index</g:link>
                     </div>
                 </div>

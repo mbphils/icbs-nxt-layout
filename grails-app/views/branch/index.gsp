@@ -55,23 +55,10 @@
                                 <td>${brnch.branchManager}</td>
                                 <td><g:formatDate date="${brnch.runDate}" type="date"/></td>
                                 <td><g:formatDate date="${brnch.branchOpsStartDate}" type="date"/></td>
-                                <td width="16%">
+                                <td width="20%">
                                     <div class="row ">
-                                        <div class="col-xs-4">
-                                            <g:form id="branchEditIdx" url="[action:'edit',controller:'branch']" method="POST">
-                                                <g:hiddenField name="brnchEdit" value="${brnch.id}" />
-                                            </g:form>
-                                            <button class="btn btn-info" title="Edit Branch" data-toggle="tooltip" data-placement="bottom" type='button' onclick="editWarning();"><i class="fa fa-edit"></i></button>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <g:form id="branchDeleteIdx" url="[action:'deleteBranchDetails',controller:'branch']" method="POST">
-                                                <g:hiddenField name="brnchDel" value="${brnch.id}" />
-                                            </g:form>
-                                            <button title="Delete Branch" data-toggle="tooltip" data-placement="bottom" type="submit" class=" btn btn-danger" onclick="deleteWarning();"><i class="fa fa-trash"></i></button>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <g:link title="Show Branch" data-toggle="tooltip" data-placement="bottom" action="show" class=" btn btn-success" 
-                                            id="${brnch.id}"><i class="fa fa-eye"></i></g:link>
+                                        <div class="col-xs-4" style="margin: 0 auto;">
+                                            <g:link action="show" class="btn btn-outline-success btn-sm" id="${brnch.id}"><i class="fa fa-eye"></i> Show Branch</g:link>
                                         </div>
                                     </div>
                                 </td>
@@ -99,7 +86,7 @@
                     </div>
                     <div class="card-body table-responsive pad">
                     <g:form id="createIdx" url="[action:'create',controller:'branch']" ></g:form>
-                        <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block" onclick="createWarning();"><i class="fas fa-edit"></i> Create New Branch</button>
+                        <button type="button" class="btn btn-outline-success btn-sm btn-block" onclick="createWarning();"><i class="fas fa-edit"></i> Create New Branch</button>
                         <!--<button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-edit"></i> Update</button>
                         <button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-backward"></i> Back</button>
                     -->
