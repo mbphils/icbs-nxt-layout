@@ -14,7 +14,7 @@ class UserMaster {
     Date userPasswordExpiryDate
     
     static constraints = {
-        branch nullable:true
+        branch nullable:false
         userName nullable:true
         password nullable:true
         lastName nullable:true
@@ -28,5 +28,6 @@ class UserMaster {
     
     static mapping = {
     	id sqlType:'int', generator:'increment'
+        branch sqlType:'int'
     }
 }
