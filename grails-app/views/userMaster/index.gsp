@@ -52,11 +52,11 @@
                                     <td>${us.userName}</td>
                                     <td>${us.firstName} ${us.lastName}</td>
                                     <td>${us.branch?.address}</td>
-                                    <td width="5%">
+                                    <td width="16%">
                                         <div class="row ">
-                                            <div class="col-xs-4" style="margin: 0 auto;">
-                                                <g:link title="Show User" data-toggle="tooltip" data-placement="bottom" action="show" class=" btn btn-success" 
-                                                id="${us.id}"><i class="fa fa-eye"></i></g:link>
+                                            <div class="col-xs-4">
+                                                <g:link title="Show User" data-toggle="tooltip" data-placement="bottom" action="show" class=" btn btn-outline-success btn-sm" 
+                                                id="${us.id}"><i class="fa fa-eye"></i> Show Details</g:link>
 
                                             </div>
                                         </div>

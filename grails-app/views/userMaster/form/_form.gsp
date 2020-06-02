@@ -34,13 +34,13 @@
             </div>
         </div>
         <div class="row form-group">
-            <label class="col-sm-3" for="uaedate">User Access Expiry Date :</label> 
+            <label class="col-sm-3" for="uaedate">Access Expiry Date :</label> 
             <div class="col-sm-9">
                 <input data-date-format="DD MMMM YYYY" required="true" id="uaedate" type="date" name="userAccessExpiryDate" class="form-control"/>
             </div>
         </div>
         <div class="row form-group">
-            <label class="col-sm-3" for="upedate">User Password Expiry Date :</label> 
+            <label class="col-sm-3" for="upedate">Password Expiry Date :</label> 
             <div class="col-sm-9">
                 <input data-date-format="DD MMMM YYYY" required="true" id="upedate" type="date" name="userPasswordExpiryDate" class="form-control"/>
             </div>
@@ -52,10 +52,5 @@
                         optionValue="address" required="" id="branchname" value="" class="many-to-one form-control"/>
                 </div>
         </div>
-    </div>
-    <div class="tab-pane fade" id="custom-content-below-profile" role="tabpanel" aria-labelledby="custom-content-below-profile-tab">
-        <legend>Add User Role</legend>
-
-        Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam. 
     </div>
 </div>
