@@ -3,6 +3,9 @@
         <p class="info">
             Complete the form below to create a new user!
         </p>
+        <g:if test="${flash.message}">
+            <div class="alert alert-danger">Sorry username and password is invalid.</div>
+        </g:if>
         <div class="row form-group">
             <label class="col-sm-3" for="uname">User Name </label> 
             <div class="col-sm-9">
@@ -13,6 +16,12 @@
             <label class="col-sm-3" for="pword">Password </label> 
             <div class="col-sm-9">
                 <input class="form-control" type="password" id="pword" placeholder="Password" name="password" required="true"></input>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-3" for="cpword">Confirm Password </label> 
+            <div class="col-sm-9">
+                <input class="form-control" type="password" id="cpword" placeholder="Confirm Password" name="cpassword" required="true"></input>
             </div>
         </div>
         <div class="row form-group">

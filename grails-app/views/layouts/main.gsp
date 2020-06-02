@@ -92,6 +92,11 @@
             
 	</head>
 	<body class="hold-transition sidebar-mini layout-fixed sidebar-collapse">
+            <g:if test="${session.user == null}">
+                <script>
+                    window.location.href="${createLink(controller:'Authentication', action:'login')}"
+                </script>  
+            </g:if>
             <!-- Navbar -->
             <nav class="main-header navbar navbar-expand navbar-white navbar-light">
               <!-- Left navbar links -->
@@ -172,7 +177,7 @@
                   <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <span class="dropdown-item dropdown-header"> User Options</span>
                     <div class="dropdown-divider"></div>
-                    <g:link class="dropdown-item" controller="authentication" action="logout"> <i class="fas fa-sign-out-alt nav-icon"></i> Logout</g:link>
+                    <g:link class="dropdown-item" controller="authentication" action="logout" id="${session?.user?.id}"> <i class="fas fa-sign-out-alt nav-icon"></i> Logout</g:link>
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item">
                       <i class="fas fa-file"></i> Balance Teller
