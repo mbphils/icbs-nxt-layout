@@ -444,28 +444,10 @@
                       </a>
                       <ul class="nav nav-treeview">
                         <li class="nav-item">
-                          <a href="pages/forms/general.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>General Elements</p>
-                          </a>
+                          <g:link class="nav-link" controller="main" action="cashDeposit"> <i class="far fa-circle nav-icon"></i> <p> Cash Deposit</p></g:link>
                         </li>
                         <li class="nav-item">
-                          <a href="pages/forms/advanced.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Advanced Elements</p>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="pages/forms/editors.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Editors</p>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="pages/forms/validation.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Validation</p>
-                          </a>
+                          <g:link class="nav-link" controller="main" action="checkDeposit"> <i class="far fa-circle nav-icon"></i> <p> Check Deposit </p></g:link>
                         </li>
                       </ul>
                     </li>

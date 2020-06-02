@@ -17,13 +17,6 @@
                 <div class="card card-gray card-outline">
                     <div class="card-header">
                       <h3 class="card-title">Cash Deposit Form</h3>
-
-                      <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                          <i class="fas fa-minus"></i></button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                          <i class="fas fa-times"></i></button>
-                      </div>
                     </div>
                     <div class="card-body">
                         <div class="card">
@@ -262,11 +255,9 @@
                       <h3 class="card-title">Actions</h3>
                     </div>
                     <div class="card-body table-responsive pad">
-                        <button type="button" class="swalSample btn btn-outline-primary btn-sm btn-block"  onclick="validateFields();"><i class="fas fa-save"></i> Save</button>
-                        <button type="button" class="btn btn-outline-primary btn-sm btn-block"><i class="fas fa-edit"></i> Update</button>
-                        <button type="button" class="btn btn-outline-primary btn-sm btn-block"><i class="fas fa-backward"></i> Back</button>
-                        <g:link class="btn btn-outline-primary btn-sm btn-block" controller="main" action="viewMoreInfo"><i class="fas fa-info-circle"></i> View More Information</g:link>
-
+                        <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="validateFields();"><i class="fas fa-save"></i> Save</button>
+                        <button type="button" class="btn btn-outline-success btn-sm btn-block"><i class="fas fa-edit"></i> Update</button>
+                        <button type="button" class="btn btn-outline-success btn-sm btn-block"><i class="fas fa-backward"></i> Back</button>
                     </div>
                 </div>
             </div>
