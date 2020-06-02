@@ -53,8 +53,8 @@
                                 <td>${brnch.name}</td>
                                 <td>${brnch.address}</td>
                                 <td>${brnch.branchManager}</td>
-                                <td><g:formatDate date="${brnch.runDate}" type="date"/></td>
-                                <td><g:formatDate date="${brnch.branchOpsStartDate}" type="date"/></td>
+                                <td><g:formatDate date="${brnch.runDate}" format="MM/dd/yyyy"/></td>
+                                <td><g:formatDate date="${brnch.branchOpsStartDate}" format="MM/dd/yyyy"/></td>
                                 <td width="20%">
                                     <div class="row ">
                                         <div class="col-xs-4" style="margin: 0 auto;">
@@ -64,16 +64,6 @@
                                 </td>
                             </tr>
                             </g:each>
-                            <tfoot>
-                                <tr>
-                                    <th>Branch Code</th>
-                                    <th>Branch Name</th>
-                                    <th>Branch Address</th>
-                                    <th>Branch Manager</th>
-                                    <th>Branch Run Date</th>
-                                    <th>Branch Start Date</th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                     <!-- /.card-body -->

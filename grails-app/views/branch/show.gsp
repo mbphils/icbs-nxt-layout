@@ -46,11 +46,11 @@
                                 <tr>
                                 <tr>
                                     <td width="30%"><strong>Branch Run Date</strong></td>
-                                    <td width="70%">${brnchInstance.runDate}</td>
+                                    <td width="70%"><g:formatDate format="MM/dd/yyyy" date="${brnchInstance.runDate}"/></td>
                                 <tr>
                                 <tr>
                                     <td width="30%"><strong>Branch Operation Start Date</strong></td>
-                                    <td width="70%">${brnchInstance.branchOpsStartDate}</td>
+                                    <td width="70%"><g:formatDate format="MM/dd/yyyy" date="${brnchInstance.branchOpsStartDate}"/></td>
                                 <tr>
                             </tbody>
                         </table>

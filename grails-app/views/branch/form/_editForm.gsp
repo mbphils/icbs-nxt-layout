@@ -1,12 +1,6 @@
 <%@ page import="icbs.admin.Branch" %>
 <div class="card-body">
-        <g:hiddenField name="brnchid" value="${brnch.id}" />
-    <div class="row form-group" ${hasErrors(bean: currencyInstance, field: 'code', 'has-error')}>
-        <label class="col-sm-3" for="bcode">Branch Code :</label> 
-        <div class="col-sm-9">
-            <input class="form-control" type="text" id="bcode" name="branchcode" value="${brnch.code}" required="true"></input>
-        </div>
-    </div>
+    <g:hiddenField name="brnchid" value="${brnch.id}" />
     <div class="row form-group">
         <label class="col-sm-3" for="bname">Branch Name : </label> 
         <div class="col-sm-9">
