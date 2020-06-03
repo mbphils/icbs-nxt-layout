@@ -1,13 +1,14 @@
 package icbs.admin
 
 import icbs.admin.UserMaster
+import icbs.admin.Branch
 
 class UserSession {
 
     Date logout
     Date login
     UserMaster user
-    UserMaster branch
+    Branch branch
 
     static constraints = {
         logout nullable: true
