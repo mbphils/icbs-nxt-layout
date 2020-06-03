@@ -18,8 +18,11 @@ class UserMasterController {
         def user = u.list {
             order("id", "asc")
         }
-
         [userlist:user]
+    }
+    
+    def create(){
+
     }
     
     def saveUserDetails() {
@@ -50,10 +53,6 @@ class UserMasterController {
             render(view:'/error/404')
         }
         
-    }
-    
-    def create(){
-
     }
     
     def edit() {

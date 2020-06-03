@@ -1,7 +1,8 @@
 package Main
 
-import icbs.admin.Session
+import icbs.admin.UserSession
 import icbs.admin.UserMaster
+import icbs.admin.Branch
 
 class MainController {
 
@@ -21,7 +22,7 @@ class MainController {
             def userDetails = UserMaster.findByUserNameAndPassword(params.username, password)
             if (userDetails) {
                 session.user = userDetails
-                def loginsession = new Session(login: new Date(), user: userDetails)
+                def loginsession = new UserSession(login: new Date(), user: userDetails, branch: userDetails)
                 loginsession.save(flush:true)
                 render(view:'/home/landing')
             } else {

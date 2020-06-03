@@ -12,10 +12,6 @@ import org.springframework.transaction.annotation.* // *Ace* (got from the net)
 
 class BranchController {
     
-    def create(){
-        respond new Branch(params)
-    }
-    
     def index(){
         def b = Branch.createCriteria()
         def branch = b.list {
@@ -23,6 +19,10 @@ class BranchController {
         }
         
         [branchlist:branch]
+    }
+    
+    def create(){
+        respond new Branch(params)
     }
     
     def saveBranchDetails() {

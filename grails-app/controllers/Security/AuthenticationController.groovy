@@ -1,7 +1,7 @@
 package Security
 
 import icbs.admin.UserMaster
-import icbs.admin.Session
+import icbs.admin.UserSession
 
 class AuthenticationController {
 
@@ -13,7 +13,7 @@ class AuthenticationController {
         println("params: "+params)
         
         def userInstance = UserMaster.get(params?.id)
-        def userSessionInstance = Session.findByUserAndLogout(userInstance, null)
+        def userSessionInstance = UserSession.findByUserAndLogout(userInstance, null)
         userSessionInstance.logout = new Date()
         userSessionInstance.save(flush:true)
         session.user = null
