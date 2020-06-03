@@ -231,36 +231,6 @@
                     </li>-->
                     <li class="nav-item has-treeview">
                       <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                          Layouts
-                          <i class="fas fa-angle-left right"></i>
-<!--                          <span class="badge badge-info right">6</span>-->
-                        </p>
-                      </a>
-                      <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                          <g:link class="nav-link" controller="main" action="forms">Forms</g:link>
-                        </li>
-                        <li class="nav-item">
-                          <g:link class="nav-link" controller="main" action="error404">404 Error Page</g:link>
-                        </li>
-                        <li class="nav-item">
-                          <g:link class="nav-link" controller="main" action="error500">500 Error Page</g:link>
-                        </li>
-                        <li class="nav-item">
-                          <g:link class="nav-link" controller="main" action="index">Index Page</g:link>
-                        </li>
-                        <li class="nav-item">
-                          <g:link class="nav-link" controller="main" action="cashDeposit">Cash Deposit</g:link>
-                        </li>
-                        <li class="nav-item">
-                          <g:link class="nav-link" controller="main" action="checkDeposit">Check Deposit</g:link>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-item has-treeview">
-                      <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-user-circle"></i>
                         <p>
                           Customer
@@ -491,10 +461,10 @@
                       </a>
                       <ul class="nav nav-treeview">
                         <li class="nav-item">
-                          <g:link class="nav-link" controller="branch" action="index">Branch Maintenance</g:link>
+                          <g:link class="nav-link" controller="branch" action="index"><i class="far fa-circle nav-icon"></i> <p>Branch Maintenance</p></g:link>
                         </li>
                         <li class="nav-item">
-                            <g:link class="nav-link" controller="userMaster" action="index">User Management</g:link>
+                            <g:link class="nav-link" controller="userMaster" action="index"><i class="far fa-circle nav-icon"></i> <p>User Management</p></g:link>
                         </li>
                       </ul>
                     </li>

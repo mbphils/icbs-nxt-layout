@@ -57,7 +57,6 @@ class BranchController {
 
         def branchDetails = Branch.get(params.brnchid)
         SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
-        branchDetails.code = params.branchcode
         branchDetails.name = params.name
         branchDetails.address = params.address
         branchDetails.branchManager = params.branchManager
