@@ -1,5 +1,8 @@
 package Main
 
+import icbs.admin.Session
+import icbs.admin.UserMaster
+
 class MainController {
 
 //    def index() { 
@@ -9,14 +12,24 @@ class MainController {
     def forms(){
         render(view:'/Form/forms')
     }
-    def loginFunction(){
-        println("params:" + params)
-       if(params.username == 'admin' && params.password == 'admin'){
-           render(view:'/home/landing')
-       }else{
-           //ERROR
-       }
+    
+    def loginFunction() {
+        println("========= userLogin =============")
+        println("params: "+params)
+ 
+            def password = params.password.encodeAsMD5()
+            def userDetails = UserMaster.findByUserNameAndPassword(params.username, password)
+            if (userDetails) {
+                session.user = userDetails
+                def loginsession = new Session(login: new Date(), user: userDetails)
+                loginsession.save(flush:true)
+                render(view:'/home/landing')
+            } else {
+                flash.message = "Sorry, Username or Password is invalid."
+                render(view:'/layouts/login')
+            } 
     }
+    
     def error404(){
         render(view:'/error/404')
     }

@@ -49,6 +49,9 @@
                             <div class="card-body">
                               <h5 class="card-title"></h5>
                                 <g:form url="[controller:'main', action:'loginFunction']" method="POST" >
+                                    <g:if test="${flash.message}">
+                                        <div class="alert alert-danger">Sorry username and password is invalid.</div>
+                                    </g:if>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fas fa-user"></i></span>

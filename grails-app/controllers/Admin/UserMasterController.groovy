@@ -21,15 +21,13 @@ class UserMasterController {
 
         [userlist:user]
     }
-    def create(){
-
-    }
     
     def saveUserDetails() {
         println("saveNewUser")
         println("params: "+params)
 
         def userDetails = new UserMaster()
+        if (userDetails) {
         SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
         Date dt = sdformat.parse(params.birthDate)
         Date da = sdformat.parse(params.userAccessExpiryDate)
@@ -41,12 +39,21 @@ class UserMasterController {
         userDetails.lastName = params.lastName
         userDetails.firstName = params.firstName
         userDetails.password = params.password.encodeAsMD5()
+        userDetails.confirm = params.cpassword.encodeAsMD5()
         userDetails.createdDate = new Date()
         userDetails.branch = Branch.get(params.address.id.toInteger())
 
         userDetails.save(flush:true)
         redirect(action: "index")
+        }
+        else {
+            render(view:'/error/404')
+        }
         
+    }
+    
+    def create(){
+
     }
     
     def edit() {
