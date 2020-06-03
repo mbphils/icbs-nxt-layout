@@ -12,19 +12,8 @@ import org.springframework.transaction.annotation.* // *Ace* (got from the net)
 @Transactional
 
 class UserMasterController {
-
-    def index() { 
-        def u = UserMaster.createCriteria()
-        def user = u.list {
-            order("id", "asc")
-        }
-        [userlist:user]
-    }
     
-    def create(){
 
-    }
-    
     def saveUserDetails() {
         println("saveNewUser")
         println("params: "+params)
@@ -53,6 +42,18 @@ class UserMasterController {
             render(view:'/error/404')
         }
         
+    }
+    
+    def index() { 
+        def u = UserMaster.createCriteria()
+        def user = u.list {
+            order("id", "asc")
+        }
+        [userlist:user]
+    }
+    
+    def create(){
+
     }
     
     def edit() {

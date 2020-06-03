@@ -9,11 +9,6 @@ class MainController {
 //    def index() { 
 //    
 //    }
-    
-    def forms(){
-        render(view:'/Form/forms')
-    }
-    
     def loginFunction() {
         println("========= userLogin =============")
         println("params: "+params)
@@ -29,6 +24,10 @@ class MainController {
                 flash.message = "Sorry, Username or Password is invalid."
                 render(view:'/layouts/login')
             } 
+    }
+    
+    def forms(){
+        render(view:'/Form/forms')
     }
     
     def error404(){
