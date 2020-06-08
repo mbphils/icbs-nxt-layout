@@ -17,7 +17,7 @@ class MainController {
             def userDetails = UserMaster.findByUserNameAndPassword(params.username, password)
             if (userDetails) {
                 session.user = userDetails
-                def loginsession = new UserSession(login: new Date(), user: userDetails, branch: userDetails)
+                def loginsession = new UserSession(login: new Date(), user: userDetails, branch: userDetails.branch)
                 loginsession.save(flush:true)
                 render(view:'/home/landing')
             } else {
