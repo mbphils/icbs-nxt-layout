@@ -2,7 +2,6 @@ package Main
 
 import icbs.admin.UserSession
 import icbs.admin.UserMaster
-import icbs.admin.Branch
 
 class MainController {
 
@@ -16,10 +15,18 @@ class MainController {
             def password = params.password.encodeAsMD5()
             def userDetails = UserMaster.findByUserNameAndPassword(params.username, password)
             if (userDetails) {
-                session.user = userDetails
-                def loginsession = new UserSession(login: new Date(), user: userDetails, branch: userDetails.branch)
-                loginsession.save(flush:true)
-                render(view:'/home/landing')
+                def userLogInst = UserSession.findByUserAndLogout(userDetails, null)
+                if (userLogInst) {
+                    println("Hey Already log into other terminal")
+                    flash.message = "Sorry, you are already logged into another terminal."
+                    render(view:'/layouts/login')
+                } else {
+                    println("Successful Login")
+                    session.user = userDetails
+                    def loginsession = new UserSession(login: new Date(), user: userDetails, branch: userDetails)
+                    loginsession.save(flush: true, failOnError: true)
+                    render(view:'/home/landing')
+                }
             } else {
                 flash.message = "Sorry, Username or Password is invalid."
                 render(view:'/layouts/login')

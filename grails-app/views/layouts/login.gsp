@@ -52,6 +52,9 @@
                                     <g:if test="${flash.message}">
                                         <div class="alert alert-danger">Sorry username and password is invalid.</div>
                                     </g:if>
+                                    <g:if test="${flash.message}">
+                                        <div class="alert alert-info">Sorry, you are already logged in into another terminal.</div>
+                                    </g:if>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fas fa-user"></i></span>
