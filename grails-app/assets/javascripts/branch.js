@@ -15,28 +15,51 @@ function branchValidation(){
         confirmButtonText: 'Submit!'       
       }).then((result) => {
         if (result.value) {
-            var fname = $();
-            var bcode = $();
-            var name = $('#fname').val();
-            var code = $('#bcode').val();
-
+            var branchCode = $('#bcode').val();
+            var branchName = $('#bname').val();
+            var branchManager = $('#bmanager').val();
+            var branchRunDate = $('#rdate').val();
+            var branchOperationStartDate = $('#bosdate').val();
             console.log("name : "+name);
-            if (name === "" || name >= 0){
+            if (branchCode == "" || isNaN(branchCode)){
                 swal({
                     type: 'error',
                     title: 'Error Occurred',
-                    text: 'Name must be filled out and/or valid (e.g a or A)'
+                    text: 'Branch Code must be filled out, and with numbers from 001-999.'
                 });
                 return true;
             }
-            else if (isNaN(code) || code === "" || code > 999 || code < 000) {
-                //alert("Code cannot be left blank, accept letters/special characters, and should be between 000 and 999 only");
+            else if (branchName == "" || branchName >= 0){
                 swal({
                     type: 'error',
                     title: 'Error Occurred',
-                    text: 'Code cannot be left blank, accept letters/special characters, and should be between 000 and 999 only'
+                    text: 'Branch Name must be filled out and/or valid (e.g a or A)'
                 });
-                return false;
+                return true;
+            }
+            else if (branchManager == "" || branchManager >= 0){
+                swal({
+                    type: 'error',
+                    title: 'Error Occurred',
+                    text: 'Branch Manager must be filled out and/or valid (e.g a or A)'
+                });
+                return true;
+            }
+            else if (branchRunDate === "") {
+            swal({
+                type: 'error',
+                title: 'Error Occurred',
+                text: 'Branch Run Date must be filled out.'
+            });
+            return false;
+            }
+            else if (branchOperationStartDate === "") {
+            swal({
+                type: 'error',
+                title: 'Error Occurred',
+                text: 'Branch Operation Start Date must be filled out.'
+            });
+            return false;
             }
             swal(
               'Submitted!',

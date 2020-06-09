@@ -51,7 +51,7 @@
                     <div class="card-body table-responsive pad">
                         <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> User Index</g:link>
                         <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="viewMoreInfo" id="${userInstance.id}"><i class="fas fa-info-circle"></i> View More Information</g:link>
-                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> Update Record</g:link>
+                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="edit" id="${userInstance.id}"><i class="fas fa-backward"></i> Update Record</g:link>
                         <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> Update User Status</g:link>
                         <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> Reset Password</g:link>
                         <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> Reset Access Expiry Date</g:link>

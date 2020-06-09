@@ -55,10 +55,10 @@ class UserMasterController {
     def create(){
 
     }
-    
+   
     def edit() {
-        def userDetails = UserMaster.get(params.userEdit)
-        [us:userDetails]
+        def userInstance = UserMaster.get(params.id)
+        [userInstance:userInstance]
     }
     
     def editUserDetails() {
@@ -66,21 +66,28 @@ class UserMasterController {
         println("params: "+params)
                     
         def userDetails = UserMaster.get(params.usid)
+        if (userDetails) {
         SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
-        Date dt = sdformat.parse(params.birthDate);
-        Date du = sdformat.parse(params.userAccessExpiryDate);
-        Date dv = sdformat.parse(params.userPasswordExpiryDate); 
+        Date dt = sdformat.parse(params.birthDate)
+        Date da = sdformat.parse(params.userAccessExpiryDate)
+        Date du = sdformat.parse(params.userPasswordExpiryDate)
         userDetails.birthDate = dt
-        userDetails.userAccessExpiryDate = du
-        userDetails.userPasswordExpiryDate = dv
+        userDetails.userAccessExpiryDate = da
+        userDetails.userPasswordExpiryDate = du
         userDetails.userName = params.userName
-        userDetails.password = params.password.encodeAsMD5()
-        userDetails.firstName = params.firstName
         userDetails.lastName = params.lastName
-        
+        userDetails.firstName = params.firstName
+        userDetails.password = params.password.encodeAsMD5()
+        userDetails.branch = Branch.get(params.address.id.toInteger())
+
         userDetails.save(flush:true)
         redirect(action: "index")
+        }
+        else {
+            render(view:'/error/404')
+        }
     }
+    
     def show(UserMaster userDetails){
         println params
         def userInstance = UserMaster.get(params.id)
