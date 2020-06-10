@@ -59,7 +59,7 @@
                                     <div class="row ">
                                         <div class="col-xs-4" style="margin: 0 auto;">
                                            <g:link title="Show User" data-toggle="tooltip" data-placement="bottom" action="edit" class=" btn btn-outline-success btn-sm" 
-                                                id="${brnch.id}"><i class="fa fa-edit"></i> Update User</g:link></div>
+                                                id="${brnch.id}"><i class="fa fa-edit"></i> Update Branch</g:link></div>
                                     </div>
                                 </td>
                             </tr>

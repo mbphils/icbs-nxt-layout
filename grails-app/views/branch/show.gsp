@@ -75,7 +75,6 @@
                         <h3 class="card-title">Actions</h3>
                     </div>
                     <div class="card-body table-responsive pad">
-                    <g:form id="createIdx" url="[action:'create',controller:'branch']" ></g:form>
                         <g:link class="btn btn-outline-success btn-sm btn-block" controller="branch" action="index"><i class="fas fa-backward"></i> Branch Index</g:link>
                         <!--<button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-edit"></i> Update</button>
                         <button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-backward"></i> Back</button>

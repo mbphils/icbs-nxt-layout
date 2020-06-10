@@ -31,7 +31,7 @@ class BranchController {
         branchDetails.runDate = dt
         branchDetails.branchOpsStartDate = da
         branchDetails.code = params.branchCode
-        branchDetails.name = params.name
+        branchDetails.name = params.branchName
         branchDetails.address = params.branchAddress
         branchDetails.branchManager = params.branchManager
 
@@ -58,6 +58,10 @@ class BranchController {
 
         def branchDetails = Branch.get(params.brnchid)
         SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
+        Date dt = sdformat.parse(params.runDate)
+        Date da = sdformat.parse(params.bosDate)
+        branchDetails.runDate = dt
+        branchDetails.branchOpsStartDate = da
         branchDetails.name = params.name
         branchDetails.address = params.address
         branchDetails.branchManager = params.branchManager

@@ -34,11 +34,9 @@ class Customer {
         birthPlace nullable:true
         customerPhoto nullable:true
         customerSignature nullable:true
-    
         branch nullable:true
         createdByUser nullable:true
         lastUpdatedByUser nullable:true
-    
         status nullable:true        
     }
     static mapping = {

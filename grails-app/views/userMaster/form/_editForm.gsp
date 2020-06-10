@@ -1,3 +1,4 @@
+<%@ page import="icbs.admin.UserMaster" %>
 <div class="tab-content" id="custom-content-below-tabContent">
     <g:hiddenField name="usid" value="${userInstance.id}" />
     <g:if test="${errorMessage}">
@@ -49,7 +50,7 @@
         <div class="row form-group">
                 <label class="col-sm-3" for="branchname">Branch</label> 
                 <div class="col-sm-9">
-                    <g:select id="address" name="address.id" from="${icbs.admin.Branch.findAllByVersion('0')}" optionKey="id" 
+                    <g:select id="address" name="address.id" from="${icbs.admin.Branch.findAllByVersion('5')}" optionKey="id" 
                         optionValue="address" required=""  id="branchname" value="${userInstance.branch.id}" class="many-to-one form-control"/>
                 </div>
         </div>

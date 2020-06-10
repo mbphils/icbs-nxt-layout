@@ -27,7 +27,7 @@
                                 Complete the form below to update branch!
                             </p>
                         </legend>
-                            <g:form class="form" role="form" autocomplete="off" id="userIdx" url="[action:'editUserDetails',controller:'userMaster']" method="POST">
+                            <g:form class="form" role="form" autocomplete="off" id="userIdx" url="[action:'editUserDetails',controller:'UserMaster']" method="POST">
                                 <g:render template="form/editForm"/>
                             </g:form>
                     </div>

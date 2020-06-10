@@ -115,8 +115,8 @@
                         <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="createUserWarning();"><i class="fas fa-save"></i> Create New User</button>
                         <g:form id="editUserIdx" url="[action:'editIndex',controller:'userMaster']" ></g:form>
                         <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="editUserWarning();"><i class="fas fa-edit"></i> Edit User</button>
-                        <g:form id="createUserIdx" url="[action:'create',controller:'userMaster']" ></g:form>
-                        <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="createUserWarning();"><i class="fas fa-save"></i> View User</button>
+                        <g:form id="userShowIdx" url="[action:'show',controller:'userMaster']" ></g:form>
+                        <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="showUserWarning();"><i class="fas fa-save"></i> View User</button>
                         <g:form id="createUserIdx" url="[action:'create',controller:'userMaster']" ></g:form>
                         <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="createUserWarning();"><i class="fas fa-save"></i> Lock User</button>
                         <g:form id="createUserIdx" url="[action:'create',controller:'userMaster']" ></g:form>

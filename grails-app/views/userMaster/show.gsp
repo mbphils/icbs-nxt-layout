@@ -9,57 +9,68 @@
 <html>
     <head>
         <meta name="layout" content="main">
-        <title>User Details</title>
+        <title>Branch Index</title>
+        <script type="text/javascript">
+            $(function () {
+              $("#example1").DataTable();
+              $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+              });
+              
+            });
+        </script>
     </head>
     <body>
         <div class="row">
             <div class="col-sm-9">
                 <div class="card card-gray card-outline">
                     <div class="card-header">
-                      <h3 class="card-title"><i class="fas fa-list-alt"></i> User Details</h3>
+                        <h3 class="card-title">Search Branch</h3>
                     </div>
+                    <!-- /.card-header -->
                     <div class="card-body">
-                        <table class="table table-hover table-responsive-sm">
-                            <tbody>
+                        <table id="example1" class="table table-bordered table-striped table-responsive-md">
+                            <thead>
                                 <tr>
-                                    <td width="30%"><strong>Username</strong></td>
-                                    <td width="70%">${userInstance.userName}</td>
-                                <tr>
-                                <tr>
-                                    <td width="30%"><strong>First Name</strong></td>
-                                    <td width="70%">${userInstance.firstName}</td>
-                                <tr>
-                                <tr>
-                                    <td width="30%"><strong>Last Name</strong></td>
-                                    <td width="70%">${userInstance.lastName}</td>
-                                <tr>
-                                <tr>
-                                    <td width="30%"><strong>Branch</strong></td>
-                                    <td width="70%">${userInstance.branch.name}</td>
-                                <tr>
-                            </tbody>
+                                    <th>User Name</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Branch</th>
+                                </tr>
+                            </thead>
+                        <g:each in="${userlist}" var="us">
+                            <tr>
+                                <td>${us.userName}</td>
+                                <td>${us.firstName}</td>
+                                <td>${us.lastName}</td>
+                                <td>${us.branch.name}</td>
+                            </tr>
+                            </g:each>
                         </table>
                     </div>
                     <!-- /.card-body -->
-                  </div>
+                </div>
             </div>
             <div class="col-sm-3">
                 <div class="action-bar card card-gray">
                     <div class="card-header">
-                      <h3 class="card-title">Actions</h3>
+                        <h3 class="card-title">Actions</h3>
                     </div>
                     <div class="card-body table-responsive pad">
-                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> User Index</g:link>
-                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="viewMoreInfo" id="${userInstance.id}"><i class="fas fa-info-circle"></i> View More Information</g:link>
-                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="edit" id="${userInstance.id}"><i class="fas fa-backward"></i> Update Record</g:link>
-                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> Update User Status</g:link>
-                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> Reset Password</g:link>
-                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> Reset Access Expiry Date</g:link>
-                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> Assign Cash/COCI Pointer</g:link>
-                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> Force Logout</g:link>
+                    <g:form id="createIdx" url="[action:'create',controller:'branch']" ></g:form>
+                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="UserMaster" action="index"><i class="fas fa-backward"></i> User Index</g:link>
+                        <!--<button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-edit"></i> Update</button>
+                        <button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-backward"></i> Back</button>
+                    -->
                     </div>
                 </div>
             </div>
         </div>
     </body>
+    
 </html>

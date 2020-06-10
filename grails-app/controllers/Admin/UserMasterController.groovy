@@ -70,7 +70,6 @@ class UserMasterController {
         println("params: "+params)
                     
         def userDetails = UserMaster.get(params.usid)
-        if (userDetails) {
         SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
         Date dt = sdformat.parse(params.birthDate)
         Date da = sdformat.parse(params.userAccessExpiryDate)
@@ -85,18 +84,15 @@ class UserMasterController {
         userDetails.branch = Branch.get(params.address.id.toInteger())
 
         userDetails.save(flush:true)
-        redirect(action: "editIndex")
-        }
-        else {
-            render(view:'/error/404')
-        }
+        redirect(action: "show", id: userDetails.id, params: [id: userDetails.id])
     }
     
     def show(UserMaster userDetails){
-        println params
-        def userInstance = UserMaster.get(params.id)
-        
-        [userInstance:userInstance]
+        def u = UserMaster.createCriteria()
+        def user = u.list {
+            order("id", "asc")
+        }
+        [userlist:user]
     }
     
     def deleteUserDetails() {

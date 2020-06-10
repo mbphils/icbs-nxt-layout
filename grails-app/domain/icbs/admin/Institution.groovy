@@ -16,3 +16,8 @@ class Institution {
     	id sqlType:'int', generator:'increment'
     }
 }
+
+/*
+    insert into institution (id, version, param_code, param_description, param_type, param_value)
+    values (1, 0, 'GEN.10100', 'System Lock', 'Logical', 'TRUE')
+ */
