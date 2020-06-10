@@ -45,6 +45,14 @@ class UserMasterController {
     }
     
     def index() { 
+        
+    }
+    
+    def create(){
+
+    }  
+   
+    def editIndex() {
         def u = UserMaster.createCriteria()
         def user = u.list {
             order("id", "asc")
@@ -52,10 +60,6 @@ class UserMasterController {
         [userlist:user]
     }
     
-    def create(){
-
-    }
-   
     def edit() {
         def userInstance = UserMaster.get(params.id)
         [userInstance:userInstance]
@@ -81,7 +85,7 @@ class UserMasterController {
         userDetails.branch = Branch.get(params.address.id.toInteger())
 
         userDetails.save(flush:true)
-        redirect(action: "index")
+        redirect(action: "editIndex")
         }
         else {
             render(view:'/error/404')
@@ -110,4 +114,5 @@ class UserMasterController {
         
         [userInstance:userInstance]
     }
+    
 }

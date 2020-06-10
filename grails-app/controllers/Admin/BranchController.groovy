@@ -17,12 +17,7 @@ class BranchController {
     }
     
     def index(){
-        def b = Branch.createCriteria()
-        def branch = b.list {
-            order("id", "asc")
-        }
-        
-        [branchlist:branch]
+
     }
     
     def saveBranchDetails() {
@@ -44,12 +39,17 @@ class BranchController {
         redirect(action: "index")
     }
     
+    def editIndex() {
+        def b = Branch.createCriteria()
+        def branch = b.list {
+            order("id", "asc")
+        }
+        [branchlist:branch]
+    }
+    
     def edit() {
-        
-        println("params : "+params)
-        
-        def branchDetails = Branch.get(params.brnchEdit)
-        [brnch:branchDetails]
+        def branchInstance = Branch.get(params.id)
+        [branchInstance:branchInstance]
     }
     
     def editBranchDetails() {
@@ -67,9 +67,12 @@ class BranchController {
 
     }
     def show(Branch branchDetails){
-        println params
-        def brnchInstance = Branch.get(params.id)
-        [brnchInstance:brnchInstance]
+        def b = Branch.createCriteria()
+        def branch = b.list {
+            order("id", "asc")
+        }
+        
+        [branchlist:branch]
     }
     def deleteBranchDetails() {
 

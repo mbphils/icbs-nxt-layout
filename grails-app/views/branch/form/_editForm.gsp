@@ -1,25 +1,25 @@
 <%@ page import="icbs.admin.Branch" %>
 <div class="card-body">
-    <g:hiddenField name="brnchid" value="${brnch.id}" />
+    <g:hiddenField name="brnchid" value="${branchInstance.id}" />
     <div class="row form-group">
         <label class="col-sm-3" for="bname">Branch Name </label> 
         <div class="col-sm-9">
-            <input class="form-control" type="text" id="bname" name="name" value="${brnch.name}"></input>
+            <input class="form-control" type="text" id="bname" name="name" value="${branchInstance.name}"></input>
         </div>
     </div>
     <div class=" row form-group">
         <label class="col-sm-3" for="badd">Branch Address </label> 
         <div class="col-sm-9">
-            </label> <input class="form-control" type="text" id="badd" name="address" value="${brnch.address}"></input>
+            </label> <input class="form-control" type="text" id="badd" name="address" value="${branchInstance.address}"></input>
         </div>
     </div>
     <div class="row form-group">
         <label class="col-sm-3" for="bmanager">Branch Manager </label> 
         <div class="col-sm-9">
-            <input class="form-control" type="text" id="bmanager" name="branchManager" value="${brnch.branchManager}"></input>
+            <input class="form-control" type="text" id="bmanager" name="branchManager" value="${branchInstance.branchManager}"></input>
         </div>
     </div>
-    <g:if test="${brnch.branchOpsStartDate}">
+    <g:if test="${branchInstance.branchOpsStartDate}">
         
     </g:if>
     <g:else>
@@ -30,7 +30,7 @@
         </div>
     </div>
     </g:else>
-    <g:if test="${brnch.branchOpsStartDate}">
+    <g:if test="${branchInstance.branchOpsStartDate}">
         
     </g:if>
     <g:else>

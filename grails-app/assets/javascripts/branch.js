@@ -7,7 +7,7 @@
 function branchValidation(){
     swal({
         title: 'Are you sure',
-        text: "You you want to continue?",
+        text: "You want to continue?",
         type: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -82,7 +82,7 @@ function branchValidation(){
 function editWarning(){
     swal({
         title: 'Are you sure',
-        text: "You you want to edit this branch?",
+        text: "You want to edit a branch?",
         type: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -98,7 +98,7 @@ function editWarning(){
 function showWarning(){
     swal({
         title: 'Are you sure',
-        text: "You you want to show this branch?",
+        text: "You want to show this branch?",
         type: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -114,7 +114,7 @@ function showWarning(){
 function deleteWarning(){
     swal({
         title: 'Are you sure',
-        text: "You you want to delete this branch?",
+        text: "You want to delete this branch?",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -130,7 +130,7 @@ function deleteWarning(){
 function createWarning(){
     swal({
         title: 'Are you sure',
-        text: "You you want to create a new branch?",
+        text: "You want to create a new branch?",
         type: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

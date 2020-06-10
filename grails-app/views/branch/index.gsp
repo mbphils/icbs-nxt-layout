@@ -10,76 +10,113 @@
     <head>
         <meta name="layout" content="main">
         <title>Branch Index</title>
-        <script type="text/javascript">
-            $(function () {
-              $("#example1").DataTable();
-              $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-              });
-              
-            });
-        </script>
     </head>
     <body>
         <div class="row">
             <div class="col-sm-9">
                 <div class="card card-gray card-outline">
+                    <g:form class="form" role="form" autocomplete="off" id="deletefrm" url="[action:'deleteUserDetails',controller:'UserMaster']" method="POST">
+                        <g:hiddenField id="usid" name="usid" value="" />
+                    </g:form>
                     <div class="card-header">
-                        <h3 class="card-title">Search Branch</h3>
+                      <h3 class="card-title"><i class="fas fa-table"></i> Branch Maintenance</h3>
                     </div>
                     <!-- /.card-header -->
-                    <div class="card-body">
-                        <table id="example1" class="table table-bordered table-striped table-responsive-md">
-                            <thead>
-                                <tr>
-                                    <th>Branch Code</th>
-                                    <th>Branch Name</th>
-                                    <th>Branch Address</th>
-                                    <th>Branch Manager</th>
-                                    <th>Branch Run Date</th>
-                                    <th>Branch Start Date</th>
-                                    <th>Actions</th>
-                            
-                                </tr>
-                            </thead>
-                        <g:each in="${branchlist}" var="brnch">
-                            <tr>
-                                <td>${brnch.code}</td>
-                                <td>${brnch.name}</td>
-                                <td>${brnch.address}</td>
-                                <td>${brnch.branchManager}</td>
-                                <td><g:formatDate date="${brnch.runDate}" format="MM/dd/yyyy"/></td>
-                                <td><g:formatDate date="${brnch.branchOpsStartDate}" format="MM/dd/yyyy"/></td>
-                                <td width="20%">
-                                    <div class="row ">
-                                        <div class="col-xs-4" style="margin: 0 auto;">
-                                            <g:link action="show" class="btn btn-outline-success btn-sm" id="${brnch.id}"><i class="fa fa-eye"></i> Show Branch</g:link>
+                    <div class="row">
+                        <div class="col-lg-3 col-6">
+                          <!-- small box -->
+                          <div class="small-box bg-info">
+                            <div class="inner">
+                              <h3>150</h3>
+
+                              <p>Savings Accounts</p>
+                            </div>
+                            <div class="icon">
+                              <i class="ion ion-bag"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                          </div>
+                        </div>
+                      <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                          <!-- small box -->
+                          <div class="small-box bg-success">
+                            <div class="inner">
+                              <h3>53</h3>
+
+                              <p>Time Deposits</p>
+                            </div>
+                            <div class="icon">
+                              <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                          </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                          <!-- small box -->
+                          <div class="small-box bg-warning">
+                            <div class="inner">
+                              <h3>44</h3>
+
+                              <p>Loans</p>
+                            </div>
+                            <div class="icon">
+                              <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                          </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                          <!-- small box -->
+                          <div class="small-box bg-danger">
+                            <div class="inner">
+                              <h3>65,000</h3>
+
+                              <p>Cash on Hand</p>
+                            </div>
+                            <div class="icon">
+                              <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                          </div>
+                        </div>
+                      <!-- ./col -->
+                    </div>
+                    <div class="container">
+                            <div class="modal fade" id="myModalDeletes">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Delete User?</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete this user? This action cannot be undone.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button style="float:right" class="btn btn-danger" onclick="myFunctionDelete();">Confirm</button>
+                                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                            </g:each>
-                        </table>
-                    </div>
-                    <!-- /.card-body -->
-                </div>
+                                </div>
+                            </div>
+                        </div> 
+                  </div>
             </div>
             <div class="col-sm-3">
                 <div class="action-bar card card-gray">
                     <div class="card-header">
-                        <h3 class="card-title">Actions</h3>
+                      <h3 class="card-title">Actions</h3>
                     </div>
                     <div class="card-body table-responsive pad">
-                    <g:form id="createIdx" url="[action:'create',controller:'branch']" ></g:form>
-                        <button type="button" class="btn btn-outline-success btn-sm btn-block" onclick="createWarning();"><i class="fas fa-edit"></i> Create New Branch</button>
-                        <!--<button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-edit"></i> Update</button>
-                        <button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-backward"></i> Back</button>
-                    -->
+                        <g:form id="createIdx" url="[action:'create',controller:'Branch']" ></g:form>
+                        <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="createWarning();"><i class="fas fa-save"></i> Create New Branch</button>
+                        <g:form id="branchEditIdx" url="[action:'editIndex',controller:'Branch']" ></g:form>
+                        <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="editWarning();"><i class="fas fa-edit"></i> Edit Branch</button>
+                        <g:form id="branchShowIdx" url="[action:'show',controller:'branch']" ></g:form>
+                        <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="showWarning();"><i class="fas fa-save"></i> View Branch</button>
                     </div>
                 </div>
             </div>
