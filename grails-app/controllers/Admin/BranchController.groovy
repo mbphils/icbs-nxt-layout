@@ -30,8 +30,8 @@ class BranchController {
         Date da = sdformat.parse(params.bosDate)
         branchDetails.runDate = dt
         branchDetails.branchOpsStartDate = da
-        branchDetails.code = params.branchCode
         branchDetails.name = params.branchName
+        branchDetails.code = params.branchCode
         branchDetails.address = params.branchAddress
         branchDetails.branchManager = params.branchManager
 
@@ -67,7 +67,7 @@ class BranchController {
         branchDetails.branchManager = params.branchManager
 
         branchDetails.save(flush:true)
-        redirect(action: "show", id: branchDetails.id, params: [id: branchDetails.id])
+        redirect(action: "editIndex", id: branchDetails.id, params: [id: branchDetails.id])
 
     }
     def show(Branch branchDetails){

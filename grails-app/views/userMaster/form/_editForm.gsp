@@ -18,6 +18,12 @@
             </div>
         </div>
         <div class="row form-group">
+            <label class="col-sm-3" for="cpword">Confirm Password </label> 
+            <div class="col-sm-9">
+                <input class="form-control" type="password" id="cpword" placeholder="Confirm Password" name="cpassword" required="true"></input>
+            </div>
+        </div>
+        <div class="row form-group">
             <label class="col-sm-3" for="fname">First Name </label> 
             <div class="col-sm-9">
                 <input class="form-control" type="text" id="fname" placeholder="First Name" name="firstName" required="true" value="${userInstance.firstName}"></input>
