@@ -9,73 +9,80 @@
 <html>
     <head>
         <meta name="layout" content="main">
-        <title>Branch Details</title>
+        <title>Branch Index</title>
+        <script type="text/javascript">
+            $(function () {
+              $("#example1").DataTable();
+              $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+              });
+              
+            });
+        </script>
     </head>
     <body>
         <div class="row">
             <div class="col-sm-9">
                 <div class="card card-gray card-outline">
                     <div class="card-header">
-                      <h3 class="card-title">Branch Details</h3>
-
-                      <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                          <i class="fas fa-minus"></i></button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                          <i class="fas fa-times"></i></button>
-                      </div>
+                        <h3 class="card-title">Search Branch</h3>
                     </div>
+                    <!-- /.card-header -->
                     <div class="card-body">
-                        <table class="table table-hover table-responsive-sm">
-                            <tbody>
+                        <table id="example1" class="table table-bordered table-striped table-responsive-md">
+                            <thead>
                                 <tr>
-                                    <td width="30%"><strong>Branch Code</strong></td>
-                                    <td width="70%">${brnchInstance.code}</td>
-                                <tr>
-                                <tr>
-                                    <td width="30%"><strong>Branch Name</strong></td>
-                                    <td width="70%">${brnchInstance.name}</td>
-                                <tr>
-                                <tr>
-                                    <td width="30%"><strong>Branch Address</strong></td>
-                                    <td width="70%">${brnchInstance.address}</td>
-                                <tr>
-                                <tr>
-                                    <td width="30%"><strong>Branch Manager</strong></td>
-                                    <td width="70%">${brnchInstance.branchManager}</td>
-                                <tr>
-                                <tr>
-                                    <td width="30%"><strong>Branch Run Date</strong></td>
-                                    <td width="70%"><g:formatDate format="MM/dd/yyyy" date="${brnchInstance.runDate}"/></td>
-                                <tr>
-                                <tr>
-                                    <td width="30%"><strong>Branch Operation Start Date</strong></td>
-                                    <td width="70%"><g:formatDate format="MM/dd/yyyy" date="${brnchInstance.branchOpsStartDate}"/></td>
-                                <tr>
-                            </tbody>
+                                    <th>Branch Code</th>
+                                    <th>Branch Name</th>
+                                    <th>Branch Address</th>
+                                    <th>Branch Manager</th>
+                                    <th>Branch Run Date</th>
+                                    <th>Branch Start Date</th>
+                                    <th>Actions</th>
+                            
+                                </tr>
+                            </thead>
+                        <g:each in="${branchlist}" var="brnch">
+                            <tr>
+                                <td>${brnch.code}</td>
+                                <td>${brnch.name}</td>
+                                <td>${brnch.address}</td>
+                                <td>${brnch.branchManager}</td>
+                                <td><g:formatDate date="${brnch.runDate}" format="MM/dd/yyyy"/></td>
+                                <td><g:formatDate date="${brnch.branchOpsStartDate}" format="MM/dd/yyyy"/></td>
+                                <td width="20%">
+                                    <div class="row ">
+                                        <div class="col-xs-4" style="margin: 0 auto;">
+                                            <g:link action="show" class="btn btn-outline-success btn-sm" id="${brnch.id}"><i class="fa fa-eye"></i> Show Branch</g:link>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </g:each>
                         </table>
                     </div>
                     <!-- /.card-body -->
-                  </div>
+                </div>
             </div>
             <div class="col-sm-3">
                 <div class="action-bar card card-gray">
                     <div class="card-header">
-                      <h3 class="card-title">Actions</h3>
+                        <h3 class="card-title">Actions</h3>
                     </div>
                     <div class="card-body table-responsive pad">
-                        <g:form id="branchEditIdx" url="[action:'edit',controller:'branch']" method="GET">
-                            <g:hiddenField name="brnchEdit" value="${brnchInstance.id}" />
-                        </g:form>
-                        <g:form id="branchDeleteIdx" url="[action:'deleteBranchDetails',controller:'branch']" method="GET">
-                            <g:hiddenField name="brnchDel" value="${brnchInstance.id}" />
-                        </g:form>
-                        <button class="btn btn-outline-success btn-sm btn-block" type='button' onclick="editWarning();"><i class="fa fa-edit"></i> Update Record</button>
-                        <button class="btn btn-outline-danger btn-sm btn-block" type="submit" onclick="deleteWarning();"><i class="fa fa-trash"></i> Delete Record</button>
                         <g:link class="btn btn-outline-success btn-sm btn-block" controller="branch" action="index"><i class="fas fa-backward"></i> Branch Index</g:link>
+                        <!--<button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-edit"></i> Update</button>
+                        <button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-backward"></i> Back</button>
+                    -->
                     </div>
                 </div>
             </div>
         </div>
     </body>
+    
 </html>

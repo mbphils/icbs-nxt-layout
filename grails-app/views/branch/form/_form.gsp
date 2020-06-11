@@ -9,7 +9,7 @@
     <div class="row form-group">
         <label class="col-sm-3" for="bname">Branch Name </label> 
         <div class="col-sm-9">
-            <input class="form-control" type="text" id="bname" name="name""></input>
+            <input class="form-control" type="text" id="bname" name="branchName"></input>
         </div>
     </div>
     <div class=" row form-group">
@@ -33,7 +33,7 @@
     <div class="row form-group">
         <label class="col-sm-3" for="bosdate">Branch Operation Start Date</label> 
         <div class="col-sm-9">
-            <input id="cbday" name="bosDate" type="date" class="form-control" required="true"/>
+            <input id="bosdate" name="bosDate" type="date" class="form-control" required="true"/>
         </div>
     </div>
 </div>

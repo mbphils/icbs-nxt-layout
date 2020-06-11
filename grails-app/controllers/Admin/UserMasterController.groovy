@@ -12,19 +12,8 @@ import org.springframework.transaction.annotation.* // *Ace* (got from the net)
 @Transactional
 
 class UserMasterController {
-
-    def index() { 
-        def u = UserMaster.createCriteria()
-        def user = u.list {
-            order("id", "asc")
-        }
-        [userlist:user]
-    }
     
-    def create(){
 
-    }
-    
     def saveUserDetails() {
         println("saveNewUser")
         println("params: "+params)
@@ -55,9 +44,25 @@ class UserMasterController {
         
     }
     
+    def index() { 
+        
+    }
+    
+    def create(){
+
+    }  
+   
+    def editIndex() {
+        def u = UserMaster.createCriteria()
+        def user = u.list {
+            order("id", "asc")
+        }
+        [userlist:user]
+    }
+    
     def edit() {
-        def userDetails = UserMaster.get(params.userEdit)
-        [us:userDetails]
+        def userInstance = UserMaster.get(params.id)
+        [userInstance:userInstance]
     }
     
     def editUserDetails() {
@@ -66,25 +71,28 @@ class UserMasterController {
                     
         def userDetails = UserMaster.get(params.usid)
         SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
-        Date dt = sdformat.parse(params.birthDate);
-        Date du = sdformat.parse(params.userAccessExpiryDate);
-        Date dv = sdformat.parse(params.userPasswordExpiryDate); 
+        Date dt = sdformat.parse(params.birthDate)
+        Date da = sdformat.parse(params.userAccessExpiryDate)
+        Date du = sdformat.parse(params.userPasswordExpiryDate)
         userDetails.birthDate = dt
-        userDetails.userAccessExpiryDate = du
-        userDetails.userPasswordExpiryDate = dv
+        userDetails.userAccessExpiryDate = da
+        userDetails.userPasswordExpiryDate = du
         userDetails.userName = params.userName
-        userDetails.password = params.password.encodeAsMD5()
-        userDetails.firstName = params.firstName
         userDetails.lastName = params.lastName
-        
+        userDetails.firstName = params.firstName
+        userDetails.password = params.password.encodeAsMD5()
+        userDetails.branch = Branch.get(params.address.id.toInteger())
+
         userDetails.save(flush:true)
-        redirect(action: "index")
+        redirect(action: "show", id: userDetails.id, params: [id: userDetails.id])
     }
+    
     def show(UserMaster userDetails){
-        println params
-        def userInstance = UserMaster.get(params.id)
-        
-        [userInstance:userInstance]
+        def u = UserMaster.createCriteria()
+        def user = u.list {
+            order("id", "asc")
+        }
+        [userlist:user]
     }
     
     def deleteUserDetails() {
@@ -102,4 +110,5 @@ class UserMasterController {
         
         [userInstance:userInstance]
     }
+    
 }

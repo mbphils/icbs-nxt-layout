@@ -11,18 +11,13 @@ import org.springframework.transaction.annotation.* // *Ace* (got from the net)
 @Transactional
 
 class BranchController {
-    
-    def index(){
-        def b = Branch.createCriteria()
-        def branch = b.list {
-            order("id", "asc")
-        }
-        
-        [branchlist:branch]
-    }
-    
+   
     def create(){
         respond new Branch(params)
+    }
+    
+    def index(){
+
     }
     
     def saveBranchDetails() {
@@ -36,7 +31,7 @@ class BranchController {
         branchDetails.runDate = dt
         branchDetails.branchOpsStartDate = da
         branchDetails.code = params.branchCode
-        branchDetails.name = params.name
+        branchDetails.name = params.branchName
         branchDetails.address = params.branchAddress
         branchDetails.branchManager = params.branchManager
 
@@ -44,12 +39,17 @@ class BranchController {
         redirect(action: "index")
     }
     
+    def editIndex() {
+        def b = Branch.createCriteria()
+        def branch = b.list {
+            order("id", "asc")
+        }
+        [branchlist:branch]
+    }
+    
     def edit() {
-        
-        println("params : "+params)
-        
-        def branchDetails = Branch.get(params.brnchEdit)
-        [brnch:branchDetails]
+        def branchInstance = Branch.get(params.id)
+        [branchInstance:branchInstance]
     }
     
     def editBranchDetails() {
@@ -58,6 +58,10 @@ class BranchController {
 
         def branchDetails = Branch.get(params.brnchid)
         SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
+        Date dt = sdformat.parse(params.runDate)
+        Date da = sdformat.parse(params.bosDate)
+        branchDetails.runDate = dt
+        branchDetails.branchOpsStartDate = da
         branchDetails.name = params.name
         branchDetails.address = params.address
         branchDetails.branchManager = params.branchManager
@@ -67,9 +71,12 @@ class BranchController {
 
     }
     def show(Branch branchDetails){
-        println params
-        def brnchInstance = Branch.get(params.id)
-        [brnchInstance:brnchInstance]
+        def b = Branch.createCriteria()
+        def branch = b.list {
+            order("id", "asc")
+        }
+        
+        [branchlist:branch]
     }
     def deleteBranchDetails() {
 

@@ -10,20 +10,6 @@
     <head>
         <meta name="layout" content="main">
         <title>User Index</title>
-        <script type="text/javascript">
-            $(function () {
-              $("#example1").DataTable();
-              $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-              });
-              
-            });
-        </script>
     </head>
     <body>
         <div class="row">
@@ -36,37 +22,67 @@
                       <h3 class="card-title"><i class="fas fa-table"></i> User Maintenance</h3>
                     </div>
                     <!-- /.card-header -->
-                    <div class="card-body">
-                      <table id="example1" class="table table-bordered table-striped table-responsive-md">
-                        <thead>
-                        <tr>
-                            <th>User Name</th>
-                            <th>Display Name</th>
-                            <th>Branch</th>
-                            <th>Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <g:each in="${userlist}" var="us">
-                                <tr>
-                                    <td>${us.userName}</td>
-                                    <td>${us.firstName} ${us.lastName}</td>
-                                    <td>${us.branch?.address}</td>
-                                    <td width="16%">
-                                        <div class="row ">
-                                            <div class="col-xs-4">
-                                                <g:link title="Show User" data-toggle="tooltip" data-placement="bottom" action="show" class=" btn btn-outline-success btn-sm" 
-                                                id="${us.id}"><i class="fa fa-eye"></i> Show Details</g:link>
+                    <div class="row">
+                        <div class="col-lg-3 col-6">
+                          <!-- small box -->
+                          <div class="small-box bg-info">
+                            <div class="inner">
+                              <h3>150</h3>
 
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </g:each>
-                        </tbody>
-                        <tfoot>
-                        </tfoot>
-                      </table>
+                              <p>Savings Accounts</p>
+                            </div>
+                            <div class="icon">
+                              <i class="ion ion-bag"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                          </div>
+                        </div>
+                      <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                          <!-- small box -->
+                          <div class="small-box bg-success">
+                            <div class="inner">
+                              <h3>53</h3>
+
+                              <p>Time Deposits</p>
+                            </div>
+                            <div class="icon">
+                              <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                          </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                          <!-- small box -->
+                          <div class="small-box bg-warning">
+                            <div class="inner">
+                              <h3>44</h3>
+
+                              <p>Loans</p>
+                            </div>
+                            <div class="icon">
+                              <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                          </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                          <!-- small box -->
+                          <div class="small-box bg-danger">
+                            <div class="inner">
+                              <h3>65,000</h3>
+
+                              <p>Cash on Hand</p>
+                            </div>
+                            <div class="icon">
+                              <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                          </div>
+                        </div>
+                      <!-- ./col -->
                     </div>
                     <div class="container">
                             <div class="modal fade" id="myModalDeletes">
@@ -97,6 +113,14 @@
                     <div class="card-body table-responsive pad">
                          <g:form id="createUserIdx" url="[action:'create',controller:'userMaster']" ></g:form>
                         <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="createUserWarning();"><i class="fas fa-save"></i> Create New User</button>
+                        <g:form id="editUserIdx" url="[action:'editIndex',controller:'userMaster']" ></g:form>
+                        <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="editUserWarning();"><i class="fas fa-edit"></i> Edit User</button>
+                        <g:form id="userShowIdx" url="[action:'show',controller:'userMaster']" ></g:form>
+                        <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="showUserWarning();"><i class="fas fa-save"></i> View User</button>
+                        <g:form id="createUserIdx" url="[action:'create',controller:'userMaster']" ></g:form>
+                        <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="createUserWarning();"><i class="fas fa-save"></i> Lock User</button>
+                        <g:form id="createUserIdx" url="[action:'create',controller:'userMaster']" ></g:form>
+                        <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="createUserWarning();"><i class="fas fa-save"></i> Transfer User Branch</button>
                     </div>
                 </div>
             </div>
