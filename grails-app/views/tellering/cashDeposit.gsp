@@ -27,7 +27,7 @@
                                   <!-- Post -->
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                          <button class="btn btn-primary">Search Account</button>
+                                          <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal-xl">Search Account</button>
                                         </div>
                                         <input type="text" class="form-control" placeholder="Username">
                                     </div>
@@ -249,14 +249,33 @@
                     <!-- /.card-body -->
                   </div>
             </div>
+            <div class="modal fade" id="modal-xl">
+                <div class="modal-dialog modal-xl">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Search Customer</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Customer Table&hellip;</p>
+                    </div>
+                    <div class="modal-footer float-right">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                  <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
             <div class="col-sm-3">
                 <div class="action-bar card card-gray">
                     <div class="card-header">
                       <h3 class="card-title">Actions</h3>
                     </div>
                     <div class="card-body table-responsive pad">
-                        <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="validateFields();"><i class="fas fa-save"></i> Save</button>
-                        <button type="button" class="btn btn-outline-success btn-sm btn-block"><i class="fas fa-edit"></i> Update</button>
+                        <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="validateFields();"><i class="fas fa-save"></i> Save Cash Deposit</button>
                         <button type="button" class="btn btn-outline-success btn-sm btn-block"><i class="fas fa-backward"></i> Back</button>
                     </div>
                 </div>

@@ -266,7 +266,6 @@
                     </div>
                     <div class="card-body table-responsive pad">
                         <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="validateFields();"><i class="fas fa-save"></i> Save</button>
-                        <button type="button" class="btn btn-outline-success btn-sm btn-block"><i class="fas fa-edit"></i> Update</button>
                         <button type="button" class="btn btn-outline-success btn-sm btn-block"><i class="fas fa-backward"></i> Back</button>
                     </div>
                 </div>

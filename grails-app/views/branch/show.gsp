@@ -58,7 +58,7 @@
                                 <td width="20%">
                                     <div class="row ">
                                         <div class="col-xs-4" style="margin: 0 auto;">
-                                            <g:link action="show" class="btn btn-outline-success btn-sm" id="${brnch.id}"><i class="fa fa-eye"></i> Show Branch</g:link>
+                                            <g:link action="showBranch" class="btn btn-outline-success btn-sm" id="${brnch.id}"><i class="fa fa-eye"></i> Show Branch</g:link>
                                         </div>
                                     </div>
                                 </td>

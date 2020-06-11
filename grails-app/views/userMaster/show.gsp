@@ -12,16 +12,16 @@
         <title>Branch Index</title>
         <script type="text/javascript">
             $(function () {
-              $("#example1").DataTable();
-              $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-              });
-              
+            $("#example1").DataTable();
+            $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            });
+
             });
         </script>
     </head>
@@ -30,7 +30,7 @@
             <div class="col-sm-9">
                 <div class="card card-gray card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Search Branch</h3>
+                        <h3 class="card-title">Search User</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -38,19 +38,31 @@
                             <thead>
                                 <tr>
                                     <th>User Name</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
+                                    <th>Display Name</th>
                                     <th>Branch</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
-                        <g:each in="${userlist}" var="us">
-                            <tr>
-                                <td>${us.userName}</td>
-                                <td>${us.firstName}</td>
-                                <td>${us.lastName}</td>
-                                <td>${us.branch.name}</td>
-                            </tr>
-                            </g:each>
+                            <tbody>
+                                <g:each in="${userlist}" var="us">
+                                    <tr>
+                                        <td>${us.userName}</td>
+                                        <td>${us.firstName} ${us.lastName}</td>
+                                        <td>${us.branch?.address}</td>
+                                        <td width="16%">
+                                            <div class="row ">
+                                                <div class="col-xs-4">
+                                                    <g:link title="Show User" data-toggle="tooltip" data-placement="bottom" action="show" class=" btn btn-outline-success btn-sm" 
+                                                    id="${us.id}"><i class="fa fa-edit"></i> Show User</g:link>
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </g:each>
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
                         </table>
                     </div>
                     <!-- /.card-body -->
@@ -62,7 +74,7 @@
                         <h3 class="card-title">Actions</h3>
                     </div>
                     <div class="card-body table-responsive pad">
-                    <g:form id="createIdx" url="[action:'create',controller:'branch']" ></g:form>
+                        <g:form id="createIdx" url="[action:'create',controller:'branch']" ></g:form>
                         <g:link class="btn btn-outline-success btn-sm btn-block" controller="UserMaster" action="index"><i class="fas fa-backward"></i> User Index</g:link>
                         <!--<button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-edit"></i> Update</button>
                         <button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="fas fa-backward"></i> Back</button>
@@ -72,5 +84,5 @@
             </div>
         </div>
     </body>
-    
+
 </html>
