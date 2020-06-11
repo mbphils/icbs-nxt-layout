@@ -51,7 +51,7 @@
                                 <tr>
                                     <td>${us.userName}</td>
                                     <td>${us.firstName} ${us.lastName}</td>
-                                    <td>${us.branch?.address}</td>
+                                    <td>${us.branch.name}</td>
                                     <td width="16%">
                                         <div class="row ">
                                             <div class="col-xs-4">

@@ -13,13 +13,27 @@ import org.springframework.transaction.annotation.* // *Ace* (got from the net)
 
 class UserMasterController {
     
+    def index() { 
+        
+    }
+    
+    def show(UserMaster userDetails){
+        def u = UserMaster.createCriteria()
+        def user = u.list {
+            order("id", "asc")
+        }
+        [userlist:user]
+    }
+    
+    def create(){
 
+    }  
+    
     def saveUserDetails() {
         println("saveNewUser")
         println("params: "+params)
 
         def userDetails = new UserMaster()
-        if (userDetails) {
         SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
         Date dt = sdformat.parse(params.birthDate)
         Date da = sdformat.parse(params.userAccessExpiryDate)
@@ -37,20 +51,7 @@ class UserMasterController {
 
         userDetails.save(flush:true)
         redirect(action: "index")
-        }
-        else {
-            render(view:'/error/404')
-        }
-        
     }
-    
-    def index() { 
-        
-    }
-    
-    def create(){
-
-    }  
    
     def editIndex() {
         def u = UserMaster.createCriteria()
@@ -81,18 +82,11 @@ class UserMasterController {
         userDetails.lastName = params.lastName
         userDetails.firstName = params.firstName
         userDetails.password = params.password.encodeAsMD5()
+        userDetails.confirm = params.cpassword.encodeAsMD5()
         userDetails.branch = Branch.get(params.address.id.toInteger())
 
         userDetails.save(flush:true)
         redirect(action: "show", id: userDetails.id, params: [id: userDetails.id])
-    }
-    
-    def show(UserMaster userDetails){
-        def u = UserMaster.createCriteria()
-        def user = u.list {
-            order("id", "asc")
-        }
-        [userlist:user]
     }
     
     def deleteUserDetails() {
