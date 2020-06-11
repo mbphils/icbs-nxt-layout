@@ -20,6 +20,8 @@ class Customer {
     Branch branch
     UserMaster createdByUser
     UserMaster lastUpdatedByUser
+    Date createdDate
+    Date lastUpdatedDate
     
     CustomerStatus status
     
@@ -38,6 +40,8 @@ class Customer {
         createdByUser nullable:true
         lastUpdatedByUser nullable:true
         status nullable:true        
+        createdDate nullable:true
+        lastUpdatedDate nullable:true
     }
     static mapping = {
     	id sqlType:'int', generator:'increment'
