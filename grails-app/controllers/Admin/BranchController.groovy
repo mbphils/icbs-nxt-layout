@@ -20,6 +20,12 @@ class BranchController {
 
     }
     
+    def viewMoreInfo(){
+        println(params)
+        def branchInstance = Branch.get(params.id)
+        [branchInstance:branchInstance]
+    }
+    
     def saveBranchDetails() {
         println("saveNewBranch")
         println("params: "+params)
@@ -62,6 +68,7 @@ class BranchController {
         Date da = sdformat.parse(params.bosDate)
         branchDetails.runDate = dt
         branchDetails.branchOpsStartDate = da
+        branchDetails.code = params.branchCode
         branchDetails.name = params.name
         branchDetails.address = params.address
         branchDetails.branchManager = params.branchManager
@@ -89,12 +96,6 @@ class BranchController {
         branchDetails.delete(flush:true)
         redirect(action: "index")
         
-    }
-    
-    def viewMoreInfo(){
-        println(params)
-        def branchInstance = Branch.get(params.id)
-        [branchInstance:branchInstance]
     }
 
 }

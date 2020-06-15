@@ -11,7 +11,7 @@ class AuthenticationController {
     def logout() {
         println("========= userLogout =============")
         println("params: "+params)
-        
+        println("Successful Logout")
         def userInstance = UserMaster.get(params?.id)
         def userSessionInstance = UserSession.findByUserAndLogout(userInstance, null)
         userSessionInstance.logout = new Date()

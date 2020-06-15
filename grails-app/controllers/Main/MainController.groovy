@@ -20,16 +20,25 @@ class MainController {
  
             def password = params.password.encodeAsMD5()
             def userDetails = UserMaster.findByUserNameAndPassword(params.username, password)
+            def userLogInst = UserSession.findByUserAndLogout(userDetails, null)
             if (userDetails) {
-                session.user = userDetails
-                def loginsession = new UserSession(login: new Date(), user: userDetails, branch: Branch.get(userDetails.branch.id))
-                loginsession.save(flush:true)
-                render(view:'/home/landing')
+                if (userLogInst) {
+                    println("Hey Already log into other terminal")
+                    flash.error = "Sorry, you are already logged into another terminal."
+                    render(view:'/layouts/login')
+                } else {
+                    println("Successful Login")
+                    session.user = userDetails
+                    def loginsession = new UserSession(login: new Date(), user: userDetails, branch: Branch.get(userDetails.branch.id))
+                    loginsession.save(flush: true, failOnError: true)
+                    render(view:'/home/landing')
+                }
             } else {
-                flash.message = "Sorry, Username or Password is invalid."
+                println("Sorry, Username or Password is invalid.")
                 render(view:'/layouts/login')
-            } 
+                flash.message = "Sorry, Username or Password is invalid."
     }
+}
     
     def error404(){
         render(view:'/error/404')
