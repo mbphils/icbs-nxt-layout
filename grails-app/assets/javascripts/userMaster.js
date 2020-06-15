@@ -6,12 +6,12 @@
 function createUserWarning(){
     swal({
         title: 'Are you sure',
-        text: "You want to delete this data?",
+        text: "You want to create a new User?",
         type: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Submit!'
+        confirmButtonText: 'Yes!'
       }).then((result) => {
         if (result.value) {
             
@@ -22,7 +22,7 @@ function createUserWarning(){
 function editUserWarning(){
     swal({
         title: 'Are you sure',
-        text: "You want to continue?",
+        text: "You want to edit a User?",
         type: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -38,7 +38,7 @@ function editUserWarning(){
 function showUserWarning(){
     swal({
         title: 'Are you sure',
-        text: "You want to show this branch?",
+        text: "You want to show a User?",
         type: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -51,26 +51,11 @@ function showUserWarning(){
         }
       });
 }
-function deleteUserWarning(){
-    swal({
-        title: 'Are you sure',
-        text: "You want to delete this branch?",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Delete!'
-      }).then((result) => {
-        if (result.value) {
-            
-           $('#userDeleteIdx').submit();
-        }
-      });
-}
+
 function userValidation() {
     swal({
         title: 'Are you sure',
-        text: "You want to continue?",
+        text: "You want to submit these details?",
         type: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

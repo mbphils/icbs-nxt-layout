@@ -78,6 +78,7 @@ class BranchController {
         
         [branchlist:branch]
     }
+    
     def deleteBranchDetails() {
 
         println("deleteSelectedBranch")
@@ -88,6 +89,12 @@ class BranchController {
         branchDetails.delete(flush:true)
         redirect(action: "index")
         
+    }
+    
+    def viewMoreInfo(){
+        println(params)
+        def branchInstance = Branch.get(params.id)
+        [branchInstance:branchInstance]
     }
 
 }

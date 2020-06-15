@@ -25,6 +25,12 @@ class UserMasterController {
         [userlist:user]
     }
     
+    def viewMoreInfo(){
+        println(params)
+        def userInstance = UserMaster.get(params.id)
+        [userInstance:userInstance]
+    }
+    
     def create(){
 
     }  
@@ -97,12 +103,6 @@ class UserMasterController {
         
         userDetails.delete(flush:true)
         redirect(action: "index")
-    }
-    def viewMoreInfo(){
-        println(params)
-        def userInstance = UserMaster.get(params.id)
-        
-        [userInstance:userInstance]
     }
     
 }

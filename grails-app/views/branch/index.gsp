@@ -114,11 +114,11 @@
                     </div>
                     <div class="card-body table-responsive pad">
                         <g:form id="createIdx" url="[action:'create',controller:'Branch']" ></g:form>
-                            <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="createWarning();"><i class="fas fa-save"></i> Create New Branch</button>
+                            <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="createWarning();"><i class="fas fa-save"></i> Create a new Branch</button>
                         <g:form id="branchEditIdx" url="[action:'editIndex',controller:'Branch']" ></g:form>
-                            <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="editWarning();"><i class="fas fa-edit"></i> Edit Branch</button>
+                            <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="editWarning();"><i class="fas fa-edit"></i> Edit a Branch</button>
                         <g:form id="branchShowIdx" url="[action:'show',controller:'branch']" ></g:form>
-                            <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="showWarning();"><i class="fas fa-eye"></i> View Branch</button>
+                            <button type="button" class="swalSample btn btn-outline-success btn-sm btn-block"  onclick="showWarning();"><i class="fas fa-eye"></i> View all Branches</button>
                         </div>
                     </div>
                 </div>

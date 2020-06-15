@@ -7,7 +7,7 @@
 function branchValidation(){
     swal({
         title: 'Are you sure',
-        text: "You want to continue?",
+        text: "You want to submit these details?",
         type: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -98,7 +98,7 @@ function editWarning(){
 function showWarning(){
     swal({
         title: 'Are you sure',
-        text: "You want to show this branch?",
+        text: "You want to show a branch?",
         type: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -135,7 +135,7 @@ function createWarning(){
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Submit!'
+        confirmButtonText: 'Yes!'
       }).then((result) => {
         if (result.value) {
             

@@ -35,36 +35,20 @@
                                     <table class="table table-hover table-responsive table-sm">
                                         <tbody>
                                             <tr>
-                                                <td width="30%"><strong>Username</strong></td>
-                                                <td width="70%">${userInstance.userName}</td>
+                                                <td width="30%"><strong>Branch Code</strong></td>
+                                                <td width="70%">${branchInstance.code}</td>
                                             <tr>
                                             <tr>
-                                                <td width="30%"><strong>First Name</strong></td>
-                                                <td width="70%">${userInstance.firstName}</td>
+                                                <td width="30%"><strong>Branch Name</strong></td>
+                                                <td width="70%">${branchInstance.name}</td>
                                             <tr>
                                             <tr>
-                                                <td width="30%"><strong>Last Name</strong></td>
-                                                <td width="70%">${userInstance.lastName}</td>
+                                                <td width="30%"><strong>Branch Address</strong></td>
+                                                <td width="70%">${branchInstance.address}</td>
                                             <tr>
                                             <tr>
-                                                <td width="30%"><strong>Birthdate</strong></td>
-                                                <td width="70%"><g:formatDate  format="MM/dd/yyyy" date="${userInstance.birthDate}" /></td>
-                                            <tr>
-                                            <tr>
-                                                <td width="30%"><strong>Date Created</strong></td>
-                                                <td width="70%"><g:formatDate  format="MM/dd/yyyy" date="${userInstance.createdDate}" /></td>
-                                            <tr>
-                                            <tr>
-                                                <td width="30%"><strong>User Access Expiry Date</strong></td>
-                                                <td width="70%"><g:formatDate  format="MM/dd/yyyy" date="${userInstance.userAccessExpiryDate}" /></td>
-                                            <tr>
-                                            <tr>
-                                                <td width="30%"><strong>Password Expiry Date</strong></td>
-                                                <td width="70%"><g:formatDate  format="MM/dd/yyyy" date="${userInstance.userPasswordExpiryDate}" /></td>
-                                            <tr>
-                                            <tr>
-                                                <td width="30%"><strong>Branch</strong></td>
-                                                <td width="70%">${userInstance.branch.name}</td>
+                                                <td width="30%"><strong>Branch Manager</strong></td>
+                                                <td width="70%">${branchInstance.branchManager}</td>
                                             <tr>
                                         </tbody>
                                     </table>
@@ -85,7 +69,7 @@
                       <h3 class="card-title">Actions</h3>
                     </div>
                     <div class="card-body table-responsive pad">
-                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="show" id="${params.id}"><i class="fas fa-backward"></i> User Inquiry</button></g:link>
+                        <g:link class="btn btn-outline-success btn-sm btn-block" controller="branch" action="show" id="${params.id}"><i class="fas fa-backward"></i> Branch Inquiry</button></g:link>
                     </div>
                 </div>
             </div>

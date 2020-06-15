@@ -39,7 +39,7 @@
                       <h3 class="card-title">Actions</h3>
                     </div>
                     <div class="card-body table-responsive pad">
-                        <button type="button" class="btn btn-outline-success btn-sm btn-block"  onclick="branchValidation();"><i class="fas fa-save"></i> Update Branch</button>
+                        <button type="button" class="btn btn-outline-success btn-sm btn-block"  onclick="branchValidation();"><i class="fas fa-save"></i> Update Branch Details</button>
                         <g:link class="btn btn-outline-success btn-sm btn-block" controller="branch" action="index"><i class="fas fa-backward"></i> Branch Index</g:link>
                     </div>
                 </div>

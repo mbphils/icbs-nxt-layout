@@ -39,7 +39,7 @@
                       <h3 class="card-title">Actions</h3>
                     </div>
                     <div class="card-body table-responsive pad">
-                        <button type="button" class="btn btn-outline-success btn-sm btn-block"  onclick="userValidation();"><i class="fas fa-save"></i> Update User</button>
+                        <button type="button" class="btn btn-outline-success btn-sm btn-block"  onclick="userValidation();"><i class="fas fa-save"></i> Update User Details</button>
                         <g:link class="btn btn-outline-success btn-sm btn-block" controller="userMaster" action="index"><i class="fas fa-backward"></i> User Index</g:link>
                     </div>
                 </div>

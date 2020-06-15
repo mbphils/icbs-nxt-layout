@@ -52,8 +52,8 @@
                                         <td width="16%">
                                             <div class="row ">
                                                 <div class="col-xs-4">
-                                                    <g:link title="Show User" data-toggle="tooltip" data-placement="bottom" action="show" class=" btn btn-outline-success btn-sm" 
-                                                    id="${us.id}"><i class="fa fa-edit"></i> Show User</g:link>
+                                                    <g:link title="Show User" data-toggle="tooltip" data-placement="bottom" action="viewMoreInfo" class=" btn btn-outline-success btn-sm" 
+                                                    id="${us.id}"><i class="fa fa-eye"></i> Show User</g:link>
 
                                                 </div>
                                             </div>
