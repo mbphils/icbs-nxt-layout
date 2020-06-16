@@ -42,7 +42,7 @@ class BranchController {
         branchDetails.branchManager = params.branchManager
 
         branchDetails.save(flush:true)
-        redirect(action: "index")
+        redirect(action: "show")
     }
     
     def editIndex() {

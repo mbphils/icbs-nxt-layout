@@ -32,7 +32,7 @@
                                 <a class="nav-link" id="custom-content-below-profile-tab" data-toggle="pill" href="#custom-content-below-profile" role="tab" aria-controls="custom-content-below-profile" aria-selected="false">User Role</a>
                             </li>
                         </ul>
-                        <g:form id="userIdx" class="form" role="form" autocomplete="off" name="createfrm" url="[action:'saveUserDetails',controller:'UserMaster']" method="POST">
+                        <g:form id="userIdx" class="form" role="form" autocomplete="off" name="createfrm" url="[action:'saveUserDetails',controller:'UserMaster']" method="POST" enctype="multipart/form-data" >
                             <g:render template="form/form"/>
                             
                         </g:form>

@@ -12,6 +12,8 @@ class UserMaster {
     Date createdDate
     Date userAccessExpiryDate
     Date userPasswordExpiryDate
+    String fileName
+    byte[] customerPhoto
     
     static constraints = {
         branch nullable:false
@@ -29,6 +31,8 @@ class UserMaster {
             }
             return true
         }
+        fileName(blank:true,nullable:true)
+        customerPhoto(nullable:true, maxSize:1073741824)
     }
     
     static mapping = {

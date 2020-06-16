@@ -8,6 +8,7 @@ import java.text.ParseException;
 import grails.gorm.transactions.*
 import icbs.admin.Branch
 import org.springframework.transaction.annotation.* // *Ace* (got from the net)
+import org.springframework.web.multipart.MultipartHttpServletRequest
 
 @Transactional
 
@@ -31,6 +32,13 @@ class UserMasterController {
         [userInstance:userInstance]
     }
     
+    def viewProductImage(){
+        println(params)
+        def photo = UserMaster.get(params.id)
+        response.outputStream << photo.customerPhoto
+        response.outputStream.flush()
+    }
+    
     def create(){
 
     }  
@@ -39,6 +47,8 @@ class UserMasterController {
         println("saveNewUser")
         println("params: "+params)
 
+        def file = request.getFile('file')
+        println("params: " +file)
         def userDetails = new UserMaster()
         SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
         Date dt = sdformat.parse(params.birthDate)
@@ -54,9 +64,11 @@ class UserMasterController {
         userDetails.confirm = params.cpassword.encodeAsMD5()
         userDetails.createdDate = new Date()
         userDetails.branch = Branch.get(params.address.id.toInteger())
-
+        userDetails.customerPhoto = file.getBytes()
+        userDetails.fileName = file.getOriginalFilename()
         userDetails.save(flush:true)
-        redirect(action: "index")
+        redirect(action: "show")
+
     }
    
     def editIndex() {

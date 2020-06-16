@@ -35,6 +35,10 @@
                                     <table class="table table-hover table-responsive table-sm">
                                         <tbody>
                                             <tr>
+                                                <td width="30%"><strong>Photo</strong></td>
+                                                <td><img src="/icbs-nxt/userMaster/viewProductImage/${params.id}" width="180" height="180"></td>
+                                            <tr>
+                                            <tr>
                                                 <td width="30%"><strong>Username</strong></td>
                                                 <td width="70%">${userInstance.userName}</td>
                                             <tr>
