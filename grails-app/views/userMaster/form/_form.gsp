@@ -55,14 +55,14 @@
             </div>
         </div>
         <div class="row form-group">
-                <label class="col-sm-3" for="branchname">Branch</label> 
+                <label class="col-sm-3" for="branchname">Branch </label> 
                 <div class="col-sm-9">
                     <g:select id="address" name="address.id" from="${icbs.admin.Branch.list()}" optionKey="id" 
-                        optionValue="address" required="" id="branchname" value="" class="many-to-one form-control"/>
+                        optionValue="name" required="" id="branchname" value="" class="many-to-one form-control"/>
                 </div>
         </div>
         <div class="row form-group">
-            <label class="col-sm-3" for="file">Photo :</label>
+            <label class="col-sm-3" for="file">Photo </label>
             <div class="col-sm-9">
                 <input id="file" class="form-control" type="file" name="file" />
             </div>
