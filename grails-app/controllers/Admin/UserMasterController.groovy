@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest
 @Transactional
 
 class UserMasterController {
-    
+
     def index() { 
         
     }
@@ -35,7 +35,7 @@ class UserMasterController {
     def viewProductImage(){
         println(params)
         def photo = UserMaster.get(params.id)
-        response.outputStream << photo.customerPhoto
+        response.outputStream << photo.userPhoto
         response.outputStream.flush()
     }
     
@@ -64,7 +64,7 @@ class UserMasterController {
         userDetails.confirm = params.cpassword.encodeAsMD5()
         userDetails.createdDate = new Date()
         userDetails.branch = Branch.get(params.address.id.toInteger())
-        userDetails.customerPhoto = file.getBytes()
+        userDetails.userPhoto = file.getBytes()
         userDetails.fileName = file.getOriginalFilename()
         userDetails.save(flush:true)
         redirect(action: "show")
@@ -116,5 +116,6 @@ class UserMasterController {
         userDetails.delete(flush:true)
         redirect(action: "index")
     }
-    
 }
+
+

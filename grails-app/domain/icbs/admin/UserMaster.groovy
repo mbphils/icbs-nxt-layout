@@ -3,6 +3,8 @@ import icbs.admin.Branch
 
 class UserMaster {
     Branch branch
+    String fileName
+    byte[] userPhoto
     String userName
     String password
     String confirm
@@ -12,11 +14,11 @@ class UserMaster {
     Date createdDate
     Date userAccessExpiryDate
     Date userPasswordExpiryDate
-    String fileName
-    byte[] customerPhoto
     
     static constraints = {
         branch nullable:false
+        fileName(nullable:true)
+        userPhoto(nullable:true, maxSize:1073741824)
         userName nullable:true
         lastName nullable:true
         firstName nullable:true
@@ -31,8 +33,6 @@ class UserMaster {
             }
             return true
         }
-        fileName(blank:true,nullable:true)
-        customerPhoto(nullable:true, maxSize:1073741824)
     }
     
     static mapping = {
