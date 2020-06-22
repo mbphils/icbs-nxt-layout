@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta name="layout" content="main">
-        <title>Branch Index</title>
+        <title>User Index</title>
         <script type="text/javascript">
             $(function () {
             $("#example1").DataTable();
