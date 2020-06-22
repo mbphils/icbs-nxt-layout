@@ -92,7 +92,7 @@
             
 	</head>
 	<body class="hold-transition sidebar-mini layout-fixed sidebar-collapse">
-            <g:if test="${session.user == null}">
+            <!--<g:if test="${session.user == null}">
                 <script>
                     window.location.href="${createLink(controller:'Authentication', action:'login')}"
                 </script>  

@@ -62,6 +62,13 @@
                 </div>
         </div>
         <div class="row form-group">
+                <label class="col-sm-3" for="branchname">Tree View Sample </label> 
+                <div class="col-sm-9">
+                    <g:select id="address" name="address.id" from="${icbs.admin.TreeView.list()}" optionKey="id" 
+                        optionValue="description" required="" id="branchname" value="" class="many-to-one form-control"/>
+                </div>
+        </div>
+        <div class="row form-group">
             <label class="col-sm-3" for="file">Photo </label>
             <div class="col-sm-9">
                 <input id="file" class="form-control" type="file" name="file" />
