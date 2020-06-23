@@ -60,6 +60,12 @@
                         optionValue="name" required=""  id="branchname" value="${userInstance.branch.id}" class="many-to-one form-control"/>
                 </div>
         </div>
+        <div class="row form-group">
+            <label class="col-sm-3" for="file">Photo </label>
+            <div class="col-sm-9">
+                <input id="file" class="form-control" type="file" name="file" />
+            </div>
+        </div>
     </div>
     <div class="tab-pane fade" id="custom-content-below-profile" role="tabpanel" aria-labelledby="custom-content-below-profile-tab">
         <legend>Add User Role</legend>

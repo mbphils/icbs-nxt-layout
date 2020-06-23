@@ -24,10 +24,10 @@
                     <div class="card-body">
                         <legend>
                             <p class="h6">
-                                Complete the form below to update branch!
+                                Complete the form below to update user!
                             </p>
                         </legend>
-                            <g:form class="form" role="form" autocomplete="off" id="userIdx" url="[action:'editUserDetails',controller:'UserMaster']" method="POST">
+                            <g:form class="form" role="form" autocomplete="off" id="userIdx" url="[action:'editUserDetails',controller:'UserMaster']" method="POST" enctype="multipart/form-data" >
                                 <g:render template="form/editForm"/>
                             </g:form>
                     </div>

@@ -27,17 +27,17 @@ class UserMasterController {
         [userlist:user]
     }
     
-    def viewMoreInfo(){
-        println(params)
-        def userInstance = UserMaster.get(params.id)
-        [userInstance:userInstance]
-    }
-    
     def viewProductImage(){
         println(params)
         def photo = UserMaster.get(params.id)
         response.outputStream << photo.userPhoto
         response.outputStream.flush()
+    }
+    
+    def viewMoreInfo(){
+        println(params)
+        def userInstance = UserMaster.get(params.id)
+        [userInstance:userInstance]
     }
     
     def create(){
@@ -64,9 +64,9 @@ class UserMasterController {
         userDetails.password = params.password.encodeAsMD5()
         userDetails.confirm = params.cpassword.encodeAsMD5()
         userDetails.createdDate = new Date()
-        userDetails.branch = Branch.get(params.address.id.toInteger())
         userDetails.userPhoto = file.getBytes()
         userDetails.fileName = file.getOriginalFilename()
+        userDetails.branch = Branch.get(params.address.id.toInteger())
         userDetails.save(flush:true)
         redirect(action: "show")
 
@@ -89,6 +89,7 @@ class UserMasterController {
         println("editCurrentCustomer")
         println("params: "+params)
                     
+        def file = request.getFile('file')
         def userDetails = UserMaster.get(params.usid)
         SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
         Date dt = sdformat.parse(params.birthDate)
@@ -102,6 +103,8 @@ class UserMasterController {
         userDetails.firstName = params.firstName
         userDetails.password = params.password.encodeAsMD5()
         userDetails.confirm = params.cpassword.encodeAsMD5()
+        userDetails.userPhoto = file.getBytes()
+        userDetails.fileName = file.getOriginalFilename()
         userDetails.branch = Branch.get(params.address.id.toInteger())
 
         userDetails.save(flush:true)
