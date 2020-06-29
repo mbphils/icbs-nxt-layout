@@ -48,13 +48,13 @@
                             </div>
                             <div class="card-body">
                               <h5 class="card-title"></h5>
-                                <g:form url="[controller:'Main', action:'loginFunction']" method="POST" >
-                                   <g:if test="${flash.message}">
-                                        <div class="alert alert-danger">${flash.message}</div>
+                                <g:form url="[controller:'Authentication', action:'loginFunction']" method="POST" >
+                                   <g:if test="${flash.error}">
+                                        <div class="alert alert-danger">${flash.error}</div>
                                     </g:if>
-                                    <g:if test="${flash.message}">
-                                        <div class="alert alert-danger">Wrong Credentials</div>
-                                    </g:if>
+                                     <g:if test="${flash.message}">
+                                        <div class="alert alert-info">${flash.message}</div>
+                                    </g:if>    
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-text"><i class="fas fa-user"></i></span>
