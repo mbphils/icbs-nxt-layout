@@ -5,10 +5,6 @@ import icbs.admin.UserSession
 import icbs.admin.Branch
 
 class AuthenticationController {
-
-    def login() { 
-        render(view:'/layouts/login')
-    }
     
     def loginFunction() {
         println("========= userLogin =============")
@@ -36,6 +32,10 @@ class AuthenticationController {
         }
     }
     
+    def login() { 
+        render(view:'/layouts/login')
+    }
+
     def logout() {
         println("========= userLogout =============")
         println("params: "+params)

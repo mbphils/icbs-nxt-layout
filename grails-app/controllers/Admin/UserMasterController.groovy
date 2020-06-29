@@ -1,5 +1,6 @@
 package Admin
 
+import groovy.sql.Sql
 import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -14,7 +15,8 @@ import org.springframework.web.multipart.MultipartHttpServletRequest
 @Transactional
 
 class UserMasterController {
-
+    def dataSource
+    
     def index() { 
         
     }
@@ -27,17 +29,24 @@ class UserMasterController {
         [userlist:user]
     }
     
-    def viewProductImage(){
-        println(params)
-        def photo = UserMaster.get(params.id)
-        response.outputStream << photo.userPhoto
-        response.outputStream.flush()
-    }
-    
     def viewMoreInfo(){
         println(params)
         def userInstance = UserMaster.get(params.id)
         [userInstance:userInstance]
+    }
+    
+    def viewProductImage(){
+        def sql = new Sql(dataSource)
+        def queryall1 = "select user_photo as ph from archive_photo where id = " + params.id
+        def resultqueryall1 = sql.rows(queryall1)
+        def userPhoto
+        for(r in resultqueryall1) {
+            userPhoto = r.ph
+        }
+        println(params)
+        def photo = UserMaster.get(params.id)
+        response.outputStream << userPhoto
+        response.outputStream.flush()
     }
     
     def create(){
@@ -58,14 +67,14 @@ class UserMasterController {
         userDetails.birthDate = dt
         userDetails.userAccessExpiryDate = da
         userDetails.userPasswordExpiryDate = du
+        userDetails.userPhoto = file.getBytes()
+        userDetails.fileName = file.getOriginalFilename()
         userDetails.userName = params.userName
         userDetails.lastName = params.lastName
         userDetails.firstName = params.firstName
         userDetails.password = params.password.encodeAsMD5()
         userDetails.confirm = params.cpassword.encodeAsMD5()
         userDetails.createdDate = new Date()
-        userDetails.userPhoto = file.getBytes()
-        userDetails.fileName = file.getOriginalFilename()
         userDetails.branch = Branch.get(params.address.id.toInteger())
         userDetails.save(flush:true)
         redirect(action: "show")
