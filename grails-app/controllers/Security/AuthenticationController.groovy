@@ -32,7 +32,7 @@ class AuthenticationController {
         } else {
             println("Sorry, Username or Password is invalid.")
             render(view:'/layouts/login')
-            flash.error = "Sorry, Username or Password is invalid."
+            flash.error = "Sorry, Username or Password is invalid. Please try again."
         }
     }
 
@@ -46,5 +46,6 @@ class AuthenticationController {
         userSessionInstance.save(flush:true)
         session.user = null
         render(view:'/layouts/login')
+        flash.info = "User logout is now completed."
     }
 }
