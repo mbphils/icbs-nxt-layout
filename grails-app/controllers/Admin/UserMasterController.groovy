@@ -29,12 +29,6 @@ class UserMasterController {
         [userlist:user]
     }
     
-    def viewMoreInfo(){
-        println(params)
-        def userInstance = UserMaster.get(params.id)
-        [userInstance:userInstance]
-    }
-    
     def viewProductImage(){
         def sql = new Sql(dataSource)
         def queryall1 = "select user_photo as ph from archive_photo where id = " + params.id
@@ -49,6 +43,12 @@ class UserMasterController {
         response.outputStream.flush()
     }
     
+    def viewMoreInfo(){
+        println(params)
+        def userInstance = UserMaster.get(params.id)
+        [userInstance:userInstance]
+    }
+
     def create(){
 
     }  

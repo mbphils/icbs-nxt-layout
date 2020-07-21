@@ -5,6 +5,10 @@ import icbs.admin.UserSession
 import icbs.admin.Branch
 
 class AuthenticationController {
+
+    def login() { 
+        render(view:'/layouts/login')
+    }
     
     def loginFunction() {
         println("========= userLogin =============")
@@ -30,10 +34,6 @@ class AuthenticationController {
             render(view:'/layouts/login')
             flash.error = "Sorry, Username or Password is invalid."
         }
-    }
-    
-    def login() { 
-        render(view:'/layouts/login')
     }
 
     def logout() {

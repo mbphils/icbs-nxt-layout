@@ -3,8 +3,6 @@ import icbs.admin.Branch
 
 class UserMaster {
     Branch branch
-    String fileName
-    byte[] userPhoto
     String userName
     String password
     String confirm
@@ -14,6 +12,8 @@ class UserMaster {
     Date createdDate
     Date userAccessExpiryDate
     Date userPasswordExpiryDate
+    String fileName
+    byte[] userPhoto
     
     static constraints = {
         branch nullable:false
